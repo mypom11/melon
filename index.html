@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="scss/style.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <script defer src="js/main.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class="search_bar">
+      <input type="text" placeholder="검색어를 입력하세요">
+      <div class="search_icon"></div>
+    </div>
+    <div class="alarm_menu">
+      <div class="alert"></div>
+      <div class="profile"></div>
+    </div>
+  </header>
+  <aside>
+    <div class="menu">
+      <h1>logo</h1>
+      <div class="menu_bg"></div>
+      <ul class="main_menu">
+        <li data-nav = "0" class="on"><span></span>HOME</li>
+        <li data-nav = "1" ><span></span>TOP100</li>
+        <li data-nav = "2" ><span></span>TREND</li>
+        <li data-nav = "3" ><span></span>PODCAST</li>
+        <li data-nav = "4" ><span></span>MUSIC VIDEO</li>
+        <li data-nav = "5" ><span></span>멜론DJ</li>
+      </ul>
+      <ul class="my_menu">MY MUSIC
+        <li><a href="#"><img src="img/icons/icon_7.png">좋아요 한 음악</a></li>
+        <li><a href="#"><img src="img/icons/icon_8.png">자주 듣는 음악</a></li>
+        <li><a href="#"><img src="img/icons/icon_9.png">나의 플레이리스트</a></li>
+      </ul>
+  </div>
+    <div class="now_playing">
+      <div class="player_bg"></div>
+      <div class="player">
+        <h5>Now Playing</h5>
+        <div class="album_art"><img src="img/album_art/iu.jpg" alt=""></div>
+        <p class="song_title">라일락(Lilac)</p>
+        <p class="song_artist">아이유(IU)</p>
+        <p class="song_album">IU 5th Album'LILAC'</p>
+        <div class="play_btn">
+          <div class="prev_btn"><img src="img/icons/btn_prev.png"></div>
+          <div class="start_btn"><img src="img/icons/btn_play.png"></div>
+          <div class="stop_btn"><img src="img/icons/btn_stop.png"></div>
+          <div class="next_btn"><img src="img/icons/btn_next.png"></div>
+        </div>
+        <div class="status_bar">
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div id="wrap_home" class="sub_menu">
+    <div class="page_toggle">
+    <span class="top"></span>
+    <span class="bottom"></span>
+    </div>
+    <section class="visual">
+      <ul class="visual_group">
+        <li class="visual01">
+          <div class="visual_img">
+            <div class="black_bg"></div>
+          </div>
+          <div class="visual_text">
+            <h3 class="sub_title">Hot ComeBack</h3>
+            <h2> 이번 장마철을 책임질 에픽하이,<br>
+              [비오는 날 듣기 좋은 노래] </h2>
+            <p>세상엔 비 오는 날 노래가 왜 이리 많을까? 시대가 변하고 세월이 흘러도 비 오는 날에 유난히 많은 사람들이 음악을 찾고 많은 뮤지션들이 비 관련 노래를 들려준다. <br>
+              비가 오면 감성이 고파지는 것도 있겠지만 그만큼 쓸쓸하고, 외롭고, 그리움을 느끼고 있는 사람들이 많다는 거겠지?</p>
+          </div>
+        </li>
+        <li class="visual02">
+          <div class="visual_img">
+            <div class="black_bg"></div>
+          </div>
+          <div class="visual_text">
+            <h3 class="sub_title">Hot ComeBack</h3>
+            <h2> K팝 원앤온리 남성 그룹” 2PM,<br>
+              5년 만에 6인 완전체 음반 [MUST] 발매 </h2>
+            <p>6인 완전체로 돌아온 2PM의 신보 [MUST]는 제목 그대로 꼭 들어야만 하는 앨범을 목표로 한다.<br> 
+              담백하면서도 진정성 있게, 그룹 2PM의 본질을 그대로 담아낸 이번 앨범을 위해 멤버들은 수록된 열 곡 중 일곱 곡의 크레디트에 이름을 올렸고,<br> 
+              트랙리스트와 앨범 구성, 콘셉트 등 앨범 기획 전반에 적극 참여하며 뜨거운 열정을 드러냈다.</p>
+          </div>
+        </li>
+        <li class="visual03">
+          <div class="visual_img">
+            <div class="black_bg"></div>
+          </div>
+          <div class="visual_text">
+            <h3 class="sub_title">Hot Debuet</h3>
+            <h2> 슈퍼루키 DRIPPIN의 꿈같은 퍼레이드!<br>
+              일곱 소년만의 놀이공원 </h2>
+            <p>2020년 하반기 많은 관심 속에 데뷔한 “슈퍼 루키” DRIPPIN이 첫 번째 싱글 [Free Pass]를 발표했다. <br>
+              [Free Pass]는 일곱 소년 DRIPPIN이 가지고 있는 특유의 청량함과 사랑스러움을 <br>
+              그들만의 음악과 비주얼, 퍼포먼스를 통해 담아낸 싱글로, 올 여름 글로벌 팬들의 마음을 사로잡을 예정이다.</p>
+          </div>
+        </li>
+        <!-- <li class="visual04">
+          <div class="visual_img">
+            <div class="black_bg"></div>
+          </div>
+          <div class="visual_text">
+            <h3 class="sub_title">Hot ComeBack</h3>
+            <h2>특별하고 짜릿한 우리들의 첫 만남,<br>
+              LIGHTSUM 'Vanilla' </h2>
+            <p>2021년을 더욱 특별하게 밝혀줄 큐브 엔터테인먼트의 신인 걸그룹 LIGHTSUM이 드디어 Debut Single 'Vanilla'로 멜론 가족 여러분을 찾아왔습니다.<br>
+              타이틀곡 'Vanilla'는 LIGHTSUM의 에너제틱하고 긍정적인 파워를 한껏 녹여낸 하이틴 Pop Dance 곡으로, <br>
+              LIGHTSUM을 처음 접하는 많은 분들에게 특별하고 짜릿한 첫 만남을 선사할 예정인데요.</p>
+          </div>
+        </li> -->
+      </ul>
+      <ul class="sub_visual">
+        <li class="on">
+          <div class="black_bg" data-num="0"></div>
+          <div class="sub_visual_text">
+            <h4>EPIK HIGH</h4>
+            <p>[비오는 날 듣기 좋은 노래]</p>
+          </div>
+        </li>
+        <li>
+          <div class="black_bg" data-num="1"></div>
+          <div class="sub_visual_text">
+            <h4>2PM</h4>
+            <p>완전체 음반 [MUST] 발매</p>
+          </div>
+        </li>
+        <li>
+          <div class="black_bg" data-num="2"></div>
+          <div class="sub_visual_text">
+            <h4>DRIPPIN</h4>
+            <p>일곱 소년만의 놀이공원[FREE PASS]</p>
+          </div>
+        </li>
+        <!-- <li>
+          <div class="black_bg" data-num="3"></div>
+          <div class="sub_visual_text">
+            <h4>LIGHTSUM</h4>
+            <p>특별하고 짜릿한 우리들의 첫만남</p>
+          </div>
+        </li> -->    
+      </ul>
+    </section>
+    <section class="new_album">
+      <ul class="new_albums">
+        <li class="album01 on">
+            <div class="black_bg"></div>
+            <div class="new_album_text">
+              <h3 class="sub_title">NEW ALBUM</h3>
+              <h2>Butter</h2>
+              <p>방탄소년단</p>
+              <div class="play_btn album_play" data-album = "Butter"><img src="img/icons/main_play.png"></div>
+            </div>
+        </li>
+        <li class="album02">
+          <div class="black_bg"></div>
+          <div class="new_album_text">
+            <h3 class="sub_title">NEW ALBUM</h3>
+            <h2>Taste of Love</h2>
+            <p>TWICE</p>
+            <div class="play_btn album_play" data-album = "Alcohol-Free"><img src="img/icons/main_play.png"></div>
+          </div>
+          </li>
+          <li class="album03">
+            <div class="black_bg"></div>
+            <div class="new_album_text">
+              <h3 class="sub_title">NEW ALBUM</h3>
+              <h2>Next Level</h2>
+              <p>aespa</p>
+              <div class="play_btn album_play" data-album = "Next Level"><img src="img/icons/main_play.png"></div>
+            </div>
+          </li>
+          <li class="album04">
+            <div class="black_bg"></div>
+            <div class="new_album_text">
+              <h3 class="sub_title">NEW ALBUM</h3>
+              <h2>THE ALBUM</h2>
+              <p>BLACK PINK</p>
+              <div class="play_btn album_play" data-album = "Lovesick Girls"><img src="img/icons/main_play.png"></div>
+            </div>
+          </li>
+      </ul>
+      <div class="toggle_btn">
+        <span data-direction="left"></span>
+        <span data-direction="right"></span>
+      </div>
+      <div class="album_slide">
+        <ul>
+          <li class="on"><img src="img/album_art/bts1.jpg"></li>
+          <li class="off"><img src="img/album_art/twice.jpg"></li>
+          <li class="off"><img src="img/album_art/aespa.jpg"></li>
+          <li class="off"><img src="img/album_art/blackpink.jpg"></li>
+        </ul>
+      </div>
+    </section>
+    <section class="artist">
+      <div class="artist_text">
+        <h3 class="sub_title">이달의 아티스트</h3>
+        <h2>아이유(IU)</h2>
+      </div>
+      <div class="artist_img"><img src="img/artist.png"></div>
+      <div class="artist_list">
+        <div class="popular_song">
+          <div class = popular_song_title>
+            <h4>아티스트 인기곡</h4>
+            <ul>
+              <li>
+                <img src="img/icons/shuffle.png">
+                <span>셔플재생</span>
+              </li>
+              <li>
+                <img src="img/icons/play_artist.png">
+                <span>전체재생</span>
+              </li>
+            </ul>
+          </div>
+          <ul class="popular_song_list">
+          </ul>
+        </div>
+        <div class="popular_album">
+          <h4>인기 앨범</h4>
+          <ul>
+            <li>
+              <div class="popular_album_art">
+                <img src="img/album_art/iu1.jpg">
+                <div></div>
+              </div>
+              <div class="popular_album_song">
+                <h6>LOVE POEM</h6>
+                <p>아이유</p>
+              </div>
+            </li>
+            <li>
+              <div class="popular_album_art">
+                <img src="img/album_art/iu4.jpg">
+                <div></div>
+              </div>
+              <div class="popular_album_song">
+                <h6>REAL IU</h6>
+                <p>아이유</p>
+              </div>
+            </li>
+            <li>
+              <div class="popular_album_art">
+                <img src="img/album_art/iu.jpg">
+                <div></div>
+              </div>
+              <div class="popular_album_song">
+                <h6>IU 5th Album 'LILAC'</h6>
+                <p>아이유</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="magazine">
+      <div class="magazine_text">
+        <div class="scroll_bar">
+          <div></div>
+        </div>
+        <ul class="magazine_index">
+          <li>
+            <h3 class="sub_title">멜론 매거진</h3>
+            <h6>비하인드 컷</h6>
+            <h2>희망으로 어둠을 밝혀가는,<br>뱀뱀(BamBam) [riBBon]</h2>
+            <p>안녕하세요. 멜론 가족 여러분! 뱀뱀 (BamBam)이 첫 번째 미니 앨범 [riBBon]을 발매하며 솔로 아티스트로서 화려한 컴백을 알렸습니다. 타이틀곡 'riBBon'은 뱀뱀 (BamBam)의 밝은 에너지와 리듬감 그리고 뱀뱀 (BamBam) 특유의 매력적인 음색이 돋보이는 곡인데요! 이번 신곡 'riBBon'을 통해 글로벌 힙스터로 거듭난 뱀뱀 (BamBam)의 뮤직비디오 촬영 비하인드 현장을 멜론 가족 여러분께 단독 공개합니다!</p>
+          </li>
+          <li>
+            <h3 class="sub_title">멜론 매거진</h3>
+            <h6>비하인드 컷</h6>
+            <h2>2PM  'The Hottest Origin'<br>
+            트레일러 촬영 현장</h2>
+            <p>안녕하세요, 멜론 가족 여러분! 약 5년 만에 완전체로 돌아온 2PM이 정규 7집 [MUST]를 공개했습니다. 이번 앨범은 오직 2PM이기에 가능한 음악과 비주얼 콘셉트로 마침내 "봐야만 하는 음악"을 그려냈는데요, 완벽한 피지컬과 비주얼, 6인 6색의 섹시미까지 2PM만의 유일무이한 매력을 담아낸 컴백 트레일러의 촬영 현장을 지금, 멜론 매거진에서 단독 공개합니다!</p>
+          </li>
+          <li>
+            <h3 class="sub_title">멜론 매거진</h3>
+            <h6>아티스트는 뭘듣지?</h6>
+            <h2>이달의 소녀 추천!<br>
+            '드라이브할 때 듣기 좋은 노래'</h2>
+            <p>지난 앨범 [12:00]을 통해 세상의 모든 이달의 소녀를 달빛 속의 화려한 페스티벌에 초대했던 이달의 소녀가, 새로운 이야기를 가지고 돌아왔습니다. 무더운 여름을 강렬한 퍼포먼스와 함께 시원하게 만들어 줄 이달의 소녀가 추천하는 플레이리스트! 지금 바로 만나 보시죠!</p>
+          </li>
+          <li>
+            <h3 class="sub_title">멜론 매거진</h3>
+            <h6>비하인드 컷</h6>
+            <h2>윤토벤 [다시,꽃이 피는 봄날에] <br>
+            키워드 인터뷰</h2>
+            <p>2019년 전상근과 함께한 싱글 [서툰 이별을 하려 해]로 화려하게 데뷔한 이후 지난 1년간 10CM, 한동근, 신예영 등 최고의 보컬리스트와 함께 협업하며 새로운 행보를 보인 윤토벤. 더욱 성장한 모습으로 돌아온 윤토벤의 새 싱글 [다시,꽃이 피는 봄날에]가 발매되었습니다. 윤토벤의 새 프로필 컷과 키워드 인터뷰, 그리고 뮤직비디오 모두 멜론 매거진에서 공개합니다!</p>
+          </li>
+        </ul>
+      </div>
+      <div class="magazine_img">
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul> 
+      </div>
+    </section>
+  </div>
+  <div id="wrap_chart" class="sub_menu">
+    <div class="chart">
+      <div class="chart_text">
+        <div class="chart_title">
+          <h3 class="sub_title">TOP 100</h3>
+          <p>현재인기있는 곡을 실시간으로 확인하세요</p>
+        </div>
+        <ul class="chart_category">
+          <li><a href="#">일간</a></li>
+          <li><a href="#">주간</a></li>
+          <li><a href="#">월간</a></li>
+          <li><a href="#">해외</a></li>
+        </ul>
+      </div>
+      <div class="chart_main">
+        <div class="no1">
+          <div class="no1_art"><img src="img/album_art/bts1.jpg" alt=""></div>
+          <div class="no1_title"><span class="number">01 -</span><br>
+           <span class="no1_title_text">Butter</span> 
+          </div>
+          <div class="no1_artist">
+            방탄소년단<br> 
+            <span>Butter[Digital Single]</span>
+          </div>
+          <div class="no1_box">
+            <div>
+              <p class="date">date</p>
+              <p class="long">현재 3주간 1위</p>
+            </div>
+            <div>
+              <div><span><img src="img/icons/icon_7.png" alt=""></span>141,300</div>
+              <ul class="play_icon">
+                <li><img src="img/icons/chart_play.png" alt=""></li>
+                <li><img src="img/icons/chart_plus.png" alt=""></li>
+                <li><img src="img/icons/chart_more.png" alt=""></li>
+              </ul>
+            </div>
+          </div>          
+        </div>
+        <div class="chart_list">
+          <ul class="chart_list_title">
+            <li>순위</li>
+            <li>곡명</li>
+            <li>아티스트</li>
+            <li>앨범명</li>
+          </ul>
+          <ul class="chart_list_list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="wrap_trend" class="sub_menu">
+    <div class="trend">
+      <div class="trend_title">
+        <h3 class ="sub_title">TREND</h3>
+        <p>최근 트렌드에 맞는 음악을 추천해드립니다.</p>
+      </div>
+      <div class="trend_main">
+        <div class="toggle_btn">
+          <span class="left"></span>
+          <span class="right"></span>
+        </div>
+        <div class="trend_slide">
+          <ul class="trend_imgs">
+            <li class="trend_0" data-gerne="Balad">
+              <div class="black_bg"></div>
+              <div class="trend_img_texts">
+                <h2>국내 R&B 차트</h2>
+                <p>인기장르</p>
+              </div>
+              <div class="trend_play_btn"><img src="img/icons/main_play.png" alt=""></div>
+            </li>
+            <li class="trend_1" data-gerne="Pop">
+              <div class="black_bg"></div>
+              <div class="trend_img_texts">
+                <h2>산뜻한 외출을 위한 데일리 팝</h2>
+                <p>공중정원</p>
+              </div>
+              <div class="trend_play_btn"><img src="img/icons/main_play.png" alt=""></div>
+            </li>
+            <li class="trend_2" data-gerne="Dance">
+              <div class="black_bg"></div>
+              <div class="trend_img_texts">
+                <h2>지금 주목해야 할 댄스음악</h2>
+                <p>대중가요마스터</p>
+              </div>
+              <div class="trend_play_btn"><img src="img/icons/main_play.png" alt=""></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="trend_songs">
+        <div class="trend_songs_title">
+          <h3>수록곡</h3>
+          <div class="toggle_btn">
+            <span class="left"></span>
+            <span class="right"></span>
+          </div>
+        </div>
+        <div class="trend_list_slide">
+          <ul class="trend_songs_list">
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="wrap_podcast" class="sub_menu">
+    <div class="page_toggle left on"></div>
+    <div class="page_toggle right"></div>
+    <ul class="podcast">
+      <li class="podcast01">
+        <div class="podcast_title">
+          <h3 class ="sub_title">PODCAST</h3>
+          <p>아티스트들의 음악방송을 들어보세요.</p>
+        </div>
+        <div class="article"><img src="img/podcast_article.png">
+          <div class="blur"></div>
+        </div>
+        <div class="podcast_main">
+          <div class="podcast_text">
+            <h2>방탄소년단 정국의
+              음악과 일상토크</h2>
+            <p>BIGHT MUSIC RECORD : 정국</p>
+            <div class="play_btn"><img src="img/icons/main_play.png" alt=""></div>
+          </div>
+          <div class="recently">
+            <div class="recently_title">
+              <h4>Recently added</h4>
+            </div>
+            <ul class="contents">
+              <li>
+                <div class="recently_img"></div>
+                <p>BIGHT MUSIC RECORD : SUGA</p>
+              </li>
+              <li>
+                <div class="recently_img"></div>
+                <p>BIGHT MUSIC RECORD : 지민</p>
+              </li>
+              <li>
+                <div class="recently_img"></div>
+                <p>BIGHT MUSIC RECORD : V</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="podcast02">
+        <div class="podcast_title">
+          <h3 class ="sub_title">PODCAST</h3>
+          <p>아티스트들의 음악방송을 들어보세요.</p>
+        </div>
+        <div class="article"><img src="img/podcast_article2.png">
+          <div class="blur"></div>
+        </div>
+        <div class="podcast_main">
+          <div class="podcast_text">
+            <h2>뽀로로의 <br>
+              뽈륨을 높여요</h2>
+            <p>DJ뽀로로가 인기 동요와 재미있는 이야기를 들려줘요</p>
+            <div class="play_btn"><img src="img/icons/main_play.png" alt=""></div>
+          </div>
+          <div class="recently">
+            <div class="recently_title">
+              <h4>Recently added</h4>
+            </div>
+            <ul class="contents">
+              <li>
+                <div class="recently_img"></div>
+                <p>23화 놀이를 부르는 노래</p>
+              </li>
+              <li>
+                <div class="recently_img"></div>
+                <p>22화 단오로소이다</p>
+              </li>
+              <li>
+                <div class="recently_img"></div>
+                <p>21화 크와앙 공룡!</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="wrap_musicvideo" class="sub_menu">
+    <div class="musicvideo">
+      <div class="musicvideo_title">
+        <h3 class ="sub_title">MUSIC VIDEO</h3>
+        <p>인기있는 뮤직비디오를 확인해보세요.</p>
+      </div>
+      <div class="musicvideo_main">
+        <div class="video_play">
+          <video src="video/butter_sample.mp4" autoplay muted loop></video>
+          <div class="movie_controler">
+            <div class="movie_underbar"></div>
+          </div>
+          <div class="black_bg"></div>
+          <div class="mute_btn mouseover"><img src="img/icons/muteX.png" alt=""></div>
+          <div class="muteX_btn mouseover"><img src="img/icons/mute.png" alt=""></div>
+          <div class="musicvideo_albumart mouseover"><img src="img/album_art/bts1.jpg" alt=""></div>
+          <div class="musicvideo_text mouseover">
+            <h2>Butter</h2>
+            <p>방탄소년단</p>
+            <p>Butter[Digital Single]</p>
+          </div>
+          <div class="video_stop_btn mouseover"><img src="img/icons/btn_stop.png" alt=""></div>   
+          <div class="video_play_btn mouseover"><img src="img/icons/btn_play.png" alt=""></div>   
+        </div>
+      </div>
+      <div class="popular_video">
+        <div class="popular_video_title">
+          <h5>인기 뮤직비디오</h5>
+          <ul>
+            <li>국내</li>
+            <li>해외</li>
+          </ul>
+        </div>
+        <ul class="popular_video_list">
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video0.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>해야 해</h6>
+              <p>2PM</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video1.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>치맛바람</h6>
+              <p>브레이브걸스</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video2.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>On The Ground</h6>
+              <p>ROSE</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video3.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>Lovesick girls</h6>
+              <p>BLACKPINK</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video4.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>Next Level</h6>
+              <p>aespa</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+          <li class="videos">
+            <div class="snapshot">
+              <video src="video/video5.mp4"></video>
+              <div class="black_bg"></div>
+            </div>
+            <div class="text">
+              <h6>Dun Dun Dance</h6>
+              <p>Oh My Girls</p>
+              <div class="more_btn"><img src="img/icons/chart_more.png" alt=""></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="wrap_melondj" class="sub_menu">
+    <div class="dj">
+      <div class="dj_title">
+        <h3 class ="sub_title">Melon DJ</h3>
+        <p>멜론만의 독특한 플레이리스트를 감상하세요.</p>
+      </div>
+      <div class="dj_main">
+        <ul class="dj_main_ul">
+          <li class="dj_lists">
+            <div class="black_bg"></div>
+            <div class="dj_main_text">
+              <div class="main_tags">
+                <span>#알앤비</span>
+                <span>#나른한</span>
+              </div>
+              <h2>뒹굴뒹굴 게으른 하루 속 R&B</h2>
+              <div class="dj_play_btn"><img src="img/icons/dj_play.png" alt=""></div>
+              <div class="dj_sub_text">
+                <p>RNBSOUL마스터</p>
+                <ul>
+                  <li><img src="img/icons/icon_7.png" alt=""> 236</li>
+                  <li>20곡</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="dj_lists">
+            <div class="black_bg"></div>
+            <div class="dj_main_text">
+              <div class="main_tags">
+                <span>#슬의생</span>
+                <span>#OST</span>
+              </div>
+              <h2>슬기로운 의사생활 OST & 삽입곡</h2>
+              <div class="dj_play_btn"><img src="img/icons/dj_play.png" alt=""></div>
+              <div class="dj_sub_text">
+                <p>OST마스터</p>
+                <ul>
+                  <li><img src="img/icons/icon_7.png" alt="">476</li>
+                  <li>14곡</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="dj_lists on">
+            <div class="black_bg"></div>
+            <div class="dj_main_text">
+              <div class="main_tags">
+                <span>#기분전환</span>
+                <span>#설렘가득</span>
+              </div>
+              <h2>연인과 듣기 좋은 음악</h2>
+              <div class="dj_play_btn"><img src="img/icons/dj_play.png" alt=""></div>
+              <div class="dj_sub_text">
+                <p>헤이스따삣</p>
+                <ul>
+                  <li><img src="img/icons/icon_7.png" alt="">360</li>
+                  <li>38곡</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="dj_lists">
+            <div class="black_bg"></div>
+            <div class="dj_main_text">
+              <div class="main_tags">
+                <span>#방탄소년단</span>
+                <span>#BTS</span>
+              </div>
+              <h2>방탄소년단의 플레이리스트</h2>
+              <div class="dj_play_btn"><img src="img/icons/dj_play.png" alt=""></div>
+              <div class="dj_sub_text">
+                <p>아티스트는뭘듣니</p>
+                <ul>
+                  <li><img src="img/icons/icon_7.png" alt="">3,261</li>
+                  <li>45곡</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="dj_lists">
+            <div class="black_bg"></div>
+            <div class="dj_main_text">
+              <div class="main_tags">
+                <span>#여름</span>
+                <span>#기분전환</span>
+              </div>
+              <h2>무더위를 날려줄 신나는 Kpop</h2>
+              <div class="dj_play_btn"><img src="img/icons/dj_play.png" alt=""></div>
+              <div class="dj_sub_text">
+                <p>뽀숑치츄</p>
+                <ul>
+                  <li><img src="img/icons/icon_7.png" alt="">269</li>
+                  <li>63곡</li>
+                </ul>
+              </div> 
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="popular_dj">
+        <div class="popular_dj_title">
+          <h5>인기 플레이리스트</h5>
+        </div>
+        <ul class="popular_dj_list">
+          <li>
+            <div class="dj_art"><img src="img/po_dj0.jpg" alt="">
+            </div>
+            <div class="dj_text">
+              <div class="tags">
+                <span>#비</span>
+                <span>#센치</span>
+              </div>
+              <h2>흐리고 비오는날 듣기 좋은 감성 노래</h2>
+              <p>rato</p>
+              <ul>
+                <li><img src="img/icons/icon_7.png" alt="">229</li>
+                <li>123곡</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="dj_art"><img src="img/po_dj1.jpg" alt="">
+            </div>
+            <div class="dj_text">
+              <div class="tags">
+                <span>#싸이월드</span>
+                <span>#bgm</span>
+              </div>
+              <h2>추억의 싸이월드 BGM 공식순위!</h2>
+              <p>대중가요마스터</p>
+              <ul>
+                <li><img src="img/icons/icon_7.png" alt="">142</li>
+                <li>25곡</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="dj_art"><img src="img/po_dj2.jpg" alt="">
+            </div>
+            <div class="dj_text">
+              <div class="tags">
+                <span>#드라이브</span>
+                <span>#여행</span>
+              </div>
+              <h2>BEST of Best 드라이브 음악</h2>
+              <p>밍쯔</p>
+              <ul>
+                <li><img src="img/icons/icon_7.png" alt="">829</li>
+                <li>70곡</li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <div class="dj_art"><img src="img/po_dj3.jpg" alt="">
+            </div>
+            <div class="dj_text">
+              <div class="tags">
+                <span>#빈티지</span>
+                <span>#여름밤</span>
+              </div>
+              <h2>선선한 초여름밤의 감성을 담은 빈티지 POP</h2>
+              <p>음악이 주는 힘</p>
+              <ul>
+                <li><img src="img/icons/icon_7.png" alt="">1,382</li>
+                <li>22곡</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

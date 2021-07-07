@@ -1,0 +1,715 @@
+{
+    "songs":[
+        {
+            "rank":"01",
+            "title":"Butter",
+            "artist":"BTS(방탄소년단)",
+            "album":"Butter[Digital Single]",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bts1.jpg",
+            "song":"music/bts_butter.mp3"
+        },
+        {
+            "rank":"02",
+            "title":"바라만 본다",
+            "artist":"MSG워너비(M.O.M)",
+            "album":"MSG워너비 1집",
+            "gerne":"Balad",
+            "albumart":"img/album_art/msgwannabe.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"03",
+            "title":"Next Level",
+            "artist":"aespa",
+            "album":"Next Level",
+            "gerne":"Dance",
+            "albumart":"img/album_art/aespa.jpg",
+            "song":"music/aespa_nextlevel.mp3"
+        },
+        {
+            "rank":"04",
+            "title":"나를 아는 사람",
+            "artist":"MSG워너비(M.O.M)",
+            "album":"MSG워너비 1집",
+            "gerne":"Balad",
+            "albumart":"img/album_art/msgwannabe.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"05",
+            "title":"헤픈 우연",
+            "artist":"헤이즈(Heize)",
+            "album":"HAPPEN",
+            "gerne":"Balad",
+            "albumart":"img/album_art/heize_happen.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"06",
+            "title":"치맛바람",
+            "artist":"브레이브걸스",
+            "album":"Summer Queen",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bravegirls1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"07",
+            "title":"Dun Dun Dance",
+            "artist":"오마이걸(OH MY GIRL)",
+            "album":"Dear OHMYGIRL",
+            "gerne":"Dance",
+            "albumart":"img/album_art/ohmygirl.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"08",
+            "title":"Peaches(Feat.Daniel Caesar & Giveon)",
+            "artist":"Justin Bieber",
+            "album":"Justice",
+            "gerne":"Pop",
+            "albumart":"img/album_art/justinbieber.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"09",
+            "title":"신호등",
+            "artist":"이무진",
+            "album":"신호등",
+            "gerne":"Balad",
+            "albumart":"img/album_art/leemujin1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"10",
+            "title":"롤린(Rollin')",
+            "artist":"브레이브걸스",
+            "album":"Rollin'",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bravegirls.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"11",
+            "title":"Alcohol-Free",
+            "artist":"TWICE(트와이스)",
+            "album":"Taste of Love",
+            "gerne":"Dance",
+            "albumart":"img/album_art/twice.jpg",
+            "song":"music/twice_alcoholfree.mp3"
+        },
+        {
+            "rank":"12",
+            "title":"라일락",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"music/iu_lilac.mp3"
+        },
+        {
+            "rank":"13",
+            "title":"ASAP",
+            "artist":"STAYC(스테이씨)",
+            "album":"STAYDOM",
+            "gerne":"Dance",
+            "albumart":"img/album_art/stayc.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"14",
+            "title":"비와 당신",
+            "artist":"이무진",
+            "album":"슬기로운 의사생활 시즌2 OST",
+            "gerne":"Balad",
+            "albumart":"img/album_art/leemujin.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"15",
+            "title":"안녕(Hello)",
+            "artist":"조이(JOY)",
+            "album":"안녕(Hello) - Special Album",
+            "gerne":"Dance",
+            "albumart":"img/album_art/joy.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"16",
+            "title":"운전만해(We Ride)",
+            "artist":"브레이브걸스",
+            "album":"We Ride",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bravegirls2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"17",
+            "title":"Dynamite",
+            "artist":"BTS(방탄소년단)",
+            "album":"Dynamite",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bts3.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"18",
+            "title":"Celebrity",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"19",
+            "title":"하루만 더",
+            "artist":"빅마마",
+            "album":"하루만 더",
+            "gerne":"Balad",
+            "albumart":"img/album_art/bigmama.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"20",
+            "title":"사이렌 Remix",
+            "artist":"호미들",
+            "album":"사이렌 Remix",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/homidle.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"21",
+            "title":"Timeless",
+            "artist":"SG 워너비",
+            "album":"SG Wanna Be+",
+            "gerne":"Balad",
+            "albumart":"img/album_art/sgwannabe.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"22",
+            "title":"비 오는 날 듣기 좋은 노래(Feat.Colde)",
+            "artist":"에픽하이(EPIK HIGH)",
+            "album":"비 오는 날 듣기 좋은 노래",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/epikhigh.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"23",
+            "title":"상상더하기",
+            "artist":"라붐(LABOUM)",
+            "album":"Fresh Adventure",
+            "gerne":"Dance",
+            "albumart":"img/album_art/laboum.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"24",
+            "title":"내 손을 잡아",
+            "artist":"아이유",
+            "album":"최고의 사랑 OST Part.4",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"25",
+            "title":"멜로디",
+            "artist":"ASH ISLAND",
+            "album":"멜로디",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/ashisland.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"26",
+            "title":"밝게 빛나는 별이 되어 비춰줄게",
+            "artist":"송이한",
+            "album":"밝게 빛나는 별이 되어 비춰줄게",
+            "gerne":"Balad",
+            "albumart":"img/album_art/songihan.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"27",
+            "title":"러브(Prod.로코베리)",
+            "artist":"로꼬,이성경",
+            "album":"Love(Prod.Rocoberry)",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/loco.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"28",
+            "title":"밤하늘의 별을(2020)",
+            "artist":"경서",
+            "album":"밤하늘의 별을(2020)",
+            "gerne":"Balad",
+            "albumart":"img/album_art/kyungsu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"29",
+            "title":"라라라",
+            "artist":"SG 워너비",
+            "album":"My Freind",
+            "gerne":"Balad",
+            "albumart":"img/album_art/sgwannabe2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"30",
+            "title":"마.피.아. In the morning",
+            "artist":"ITZY(있지)",
+            "album":"GUESS WHO",
+            "gerne":"Dance",
+            "albumart":"img/album_art/itzu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"31",
+            "title":"LOVE DAY(2021)",
+            "artist":"양요섭, 정은지",
+            "album":"LOVE DAY(2021)",
+            "gerne":"Balad",
+            "albumart":"img/album_art/yang.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"32",
+            "title":"Savage Love(BTS Remix)",
+            "artist":"Jawsh 685, Jason Derulo, BTS",
+            "album":"Savage Love",
+            "gerne":"Pop",
+            "albumart":"img/album_art/jawsh.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"33",
+            "title":"Lovesick Girls",
+            "artist":"BLACKPINK",
+            "album":"THE ALBUM",
+            "gerne":"Dance",
+            "albumart":"img/album_art/blackpink.jpg",
+            "song":"music/blackpink_lovesickgirls.mp3"
+        },
+        {
+            "rank":"34",
+            "title":"잠이 오질 않네요",
+            "artist":"장범준",
+            "album":"잠이 오질 않네요",
+            "gerne":"Balad",
+            "albumart":"img/album_art/jangbumjun.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"35",
+            "title":"Dolphin",
+            "artist":"오마이걸(OH MY GIRL)",
+            "album":"NONSTOP",
+            "gerne":"Dance",
+            "albumart":"img/album_art/ohmygirl1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"36",
+            "title":"에잇",
+            "artist":"아이유",
+            "album":"에잇",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu5.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"37",
+            "title":"추억은 만남보다 이별에 남아",
+            "artist":"정동하",
+            "album":"추억은 만남보다 이별에 남아",
+            "gerne":"Balad",
+            "albumart":"img/album_art/jungdongha.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"38",
+            "title":"취기를 빌려 (취향저격 그녀 X 산들)",
+            "artist":"산들",
+            "album":"취기를 빌려 (취향저격 그녀 OST)",
+            "gerne":"Balad",
+            "albumart":"img/album_art/sandle.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"39",
+            "title":"어떻게 이별까지 사랑하겠어, 널 사랑하는 거지",
+            "artist":"AKMU(악동뮤지션)",
+            "album":"항해",
+            "gerne":"Balad",
+            "albumart":"img/album_art/akmu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"40",
+            "title":"Coin",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"41",
+            "title":"Blueming",
+            "artist":"아이유",
+            "album":"Love poem",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"42",
+            "title":"작은 것들을 위한 시",
+            "artist":"BTS(방탄소년단)",
+            "album":"MAP OF THE SOUL : PERSONA",
+            "gerne":"Dance",
+            "albumart":"img/album_art/bts2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"43",
+            "title":"내 사람",
+            "artist":"SG 워너비",
+            "album":"The Precious History",
+            "gerne":"Balad",
+            "albumart":"img/album_art/sgwannabe3.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"44",
+            "title":"아로하",
+            "artist":"조정석",
+            "album":"슬기로운 의사생활 OST Part3",
+            "gerne":"Balad",
+            "albumart":"img/album_art/jojungsuc.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"45",
+            "title":"Off My Face",
+            "artist":"Justin Bieber",
+            "album":"Justice",
+            "gerne":"Pop",
+            "albumart":"img/album_art/justinbieber.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"46",
+            "title":"On The Ground",
+            "artist":"로제(ROSE)",
+            "album":"R",
+            "gerne":"Dance",
+            "albumart":"img/album_art/rose.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"47",
+            "title":"VVS(Feat.JUSTHIS)",
+            "artist":"머쉬배놈, 미란이, 먼치맨, Khundi panda",
+            "album":"쇼미더머니 9 Episode 1",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/vvs.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"48",
+            "title":"어푸 (Ah puh)",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"49",
+            "title":"2002",
+            "artist":"Anne-Marie",
+            "album":"Speak Your Mind",
+            "gerne":"Pop",
+            "albumart":"img/album_art/anne.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"50",
+            "title":"12:45 (Stripped)",
+            "artist":"Etham",
+            "album":"12:45 (Stripped",
+            "gerne":"Pop",
+            "albumart":"img/album_art/etham.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"51",
+            "title":"마음을 드려요",
+            "artist":"아이유",
+            "album":"사랑의 불시착 OST Part 11",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu6.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"52",
+            "title":"Paris In The Rain",
+            "artist":"Lauv",
+            "album":"I met you when I wans 18.",
+            "gerne":"Pop",
+            "albumart":"img/album_art/lauv.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"53",
+            "title":"Love poem",
+            "artist":"아이유",
+            "album":"Love poem",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"54",
+            "title":"아이와 나의 바다",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"55",
+            "title":"Don't Start Now",
+            "artist":"Dua Lipa",
+            "album":"Future Nostalgia",
+            "gerne":"Pop",
+            "albumart":"img/album_art/dualipa.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"56",
+            "title":"METEOR",
+            "artist":"창모",
+            "album":"Boyhood",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/changmo.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"57",
+            "title":"어떻게 지내",
+            "artist":"오반(OVAN)",
+            "album":"어떻게 지내",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/ovan.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"58",
+            "title":"Memories",
+            "artist":"Maroon 5",
+            "album":"JORDI (Deluxe)",
+            "gerne":"Pop",
+            "albumart":"img/album_art/maroon5.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"59",
+            "title":"Dance Monkey",
+            "artist":"Tones And I",
+            "album":"The Kids Are Coming",
+            "gerne":"Pop",
+            "albumart":"img/album_art/tones.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"60",
+            "title":"팔레트(Feat.G-DRAGON)",
+            "artist":"아이유",
+            "album":"Palette",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/iu3.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"61",
+            "title":"아무노래",
+            "artist":"지코(ZICO)",
+            "album":"아무노래",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/zico.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"62",
+            "title":"한 여름 밤의 꿀",
+            "artist":"San E, 레이나",
+            "album":"한 여름 밤의 꿀",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/sane.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"63",
+            "title":"Kiss Me More",
+            "artist":"Doja Cat",
+            "album":"Kiss ME More",
+            "gerne":"Pop",
+            "albumart":"img/album_art/dojacat.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"64",
+            "title":"해야 해",
+            "artist":"2PM",
+            "album":"MUST",
+            "gerne":"Dance",
+            "albumart":"img/album_art/2pm.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"65",
+            "title":"Flu",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"66",
+            "title":"돌림 노래(Feat.DEAN)",
+            "artist":"아이유",
+            "album":"IU 5th Album 'LILAC'",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/iu.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"67",
+            "title":"Love Yourself",
+            "artist":"Justin Bieber",
+            "album":"Love Yourself",
+            "gerne":"Pop",
+            "albumart":"img/album_art/justinbieber1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"68",
+            "title":"Shape of you",
+            "artist":"Ed Sheeran",
+            "album":"/(Deluxe)",
+            "gerne":"Pop",
+            "albumart":"img/album_art/ed.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"69",
+            "title":"34 + 35",
+            "artist":"Ariana Grande",
+            "album":"Position",
+            "gerne":"Pop",
+            "albumart":"img/album_art/ariana.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"70",
+            "title":"pov",
+            "artist":"Ariana Grande",
+            "album":"Position",
+            "gerne":"Pop",
+            "albumart":"img/album_art/ariana.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"71",
+            "title":"Snowman",
+            "artist":"Sia",
+            "album":"Everyday is Christmas",
+            "gerne":"Pop",
+            "albumart":"img/album_art/sia.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"72",
+            "title":"Never Not",
+            "artist":"Lauv",
+            "album":"I met you when I was 18.",
+            "gerne":"Pop",
+            "albumart":"img/album_art/lauv.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"73",
+            "title":"Speechless(Full)",
+            "artist":"Naomi Scott",
+            "album":"Aladdin",
+            "gerne":"Pop",
+            "albumart":"img/album_art/aladin.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"74",
+            "title":"A Whole New World",
+            "artist":"ZAYN, Zhavia ward",
+            "album":"Aladdin",
+            "gerne":"Pop",
+            "albumart":"img/album_art/aladin.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"75",
+            "title":"좋은 날",
+            "artist":"아이유",
+            "album":"Real IU",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu4.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"76",
+            "title":"미리 메리 크리스마스",
+            "artist":"아이유",
+            "album":"Real IU",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu4.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"77",
+            "title":"스물셋",
+            "artist":"아이유",
+            "album":"CHAT-SHIRE",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu7.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"78",
+            "title":"분홍신",
+            "artist":"아이유",
+            "album":"Modern Times",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu8.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"79",
+            "title":"ZEZE",
+            "artist":"아이유",
+            "album":"Palette",
+            "gerne":"Dance",
+            "albumart":"img/album_art/iu3.jpg",
+            "song":"null"
+        }
+    ]
+}
