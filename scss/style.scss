@@ -6,6 +6,47 @@ $white_color_second:#EEEEEE;
 $black_color_second:#3d3d3d;
 $main_gradient: linear-gradient(180deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 100%);
 $main_gradient2: linear-gradient(90deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 100%);
+@mixin font($s:14px, $w:normal, $c:null, $f:null){
+  font-size: $s;
+  font-weight: $w;
+  font-family: $f;
+  color : $c;
+}
+@mixin size($w:100%, $h:100%){
+  width: $w;
+  height: $h;
+}
+@mixin position($t:null ,$l:null, $p:absolute, $r:null ,$b:null){
+  position: $p;
+  top: $t;
+  left: $l;
+  right: $r;
+  bottom: $b;
+}
+@mixin background($u:null, $d:center, $s:cover){
+  background-image: url("../img/#{$u}");
+  background-position: $d center;
+  background-size: $s;
+  background-repeat: no-repeat;
+}
+@mixin text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;  
+}
+@mixin arrow ($direction){
+  cursor: pointer;
+  @include background('icons/arrow_#{$direction}.png', #{$direction});
+  &:hover{
+    @include background('icons/arrow_#{$direction}_green.png', #{$direction});
+  }
+}
+@mixin flex ($j:space-between, $a:center, $d:null){
+  display: flex;
+  justify-content: $j;
+  align-items : $a;
+  flex-direction: $d;
+}
 @keyframes artist_move{
   from{
     bottom: -100%;
@@ -104,41 +145,38 @@ body{
   overflow: hidden;
   max-width: 1920px;
   min-width: 1920px;
-  
-}
-.sub_title{
-  font-size: 28px;
-  font-weight: bold;
-  font-family: "poppins";
-  color: $main_color;
-}
-.black_bg{
-  display: block;
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top:0;
-  left: 0;
-  background: rgba(0,0,0,0.5);
+  .sub_menu{
+    @include size;
+    @include position(0, 100%);
+    background: #fff;
+    transition: 1s;
+    z-index: 5;
+    &.on{
+      left: 240px;
+    }
+  }
+  .sub_title{
+    @include font(28px, bold, $main_color, "poppins");
+  }
+  .black_bg{
+    display: block;
+    content: "";
+    @include size;
+    @include position(0, 0);
+    background: rgba(0,0,0,0.5);
+  }
 }
 header{
-  width: 1520px;
-  height: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  left: 240+80px;
-  top: 40px;
+  @include size(1520px, 50px);
+  @include position(40px, 320px, fixed);
+  @include flex;
   z-index: 10;
   .search_bar{
-    width: 593px;
-    height: 35px;
+    @include size(593px, 35px);
+    @include position($p:relative);
     border-radius: 20px;
     background: $white_color_second;
     padding: 6px 20px;
-    position: relative;
     opacity: 0.3;
     input{
       background: none;
@@ -146,83 +184,65 @@ header{
       color: $black_color_second;
     }
     .search_icon{
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      right: 17px;
-      top: 8px;
-      background: url(../img/icons/seacrh.png) center center no-repeat;
-      background-size: cover;
+      @include size(20px, 20px);
+      @include position($r:17px, $t:8px);
+      @include background("icons/search.png");
     }
   }
   .alarm_menu{
-    display: flex;
-    align-items: center;
+    @include flex($j: null);
     .alert{
-      width: 30px;
-      height: 30px;
-      background: url(../img/icons/alarm.png) center center no-repeat;
-      background-size: cover;
+      @include size(30px, 30px);
+      @include background('icons/alarm.png');
       margin-right: 15px;
     }
     .profile{
-      width: 50px;
-      height: 50px;
-      background: url(../img/profile.png) center center no-repeat;
-      background-size: cover;
+      @include size(50px, 50px);
+      @include background('profile.png');
       border-radius: 50%;
     }
   }
 }
 aside{
-  position: fixed;
-  width: 240px;
-  height: 100vh;
+  @include position($p:fixed);
+  @include size(240px, 100vh);
   background: #eee;
   .menu{
     padding: 30px 40px;
-    position: relative;
+    @include position($p:relative);
     .menu_bg{
-      width: 180px;
-      height: 36px;
+      @include size(180px, 36px);
+      @include position(74px, 20px);
       border-radius: 12px;
       background: #4be274;
-      position: absolute;
-      top: 74px;
-      left: 20px;
       transition: 0.5s;
     }
     h1{
       margin-bottom: 35px;
       height: 20px;
       font-size: 0;
-      background: url(../img/logo.png) left center no-repeat;
-      background-size: contain;
+      @include background('logo.png', left, contain);
     }
     img{
-      width: 20px;
-      height: 20px;
+      @include size(20px, 20px);
       margin-right: 10px;
       vertical-align: middle;
     }
     .main_menu{
       li{
-        font-size: 12px;
-        line-height: 12px;
-        margin-bottom: 22px;
         position: relative;
+        line-height: 12px;
+        font-size: 12px;
         z-index: 1;
         transition: 0.5s;
+        margin-bottom: 22px;
         padding-left: 30px;
         cursor: pointer;
         span{
           content: "";
           display: block;
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          left: 0;
-          top: -4px;
+          @include size(20px, 20px);
+          @include position(0, -4px);
           background: black;
         }
         &.on{
@@ -231,293 +251,169 @@ aside{
         &:hover{
           color: #fff;
         }
-        &:nth-child(1){
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_1w.png);
-          }
-          span{
-            background: url(../img/icons/icon_1.png);
-          }
-        }
-        &:nth-child(2){
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_2w.png);
-          }
-          span{
-            background: url(../img/icons/icon_2.png);
-          }
-        }
-        &:nth-child(3){
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_3w.png);
-          }
-          span{
-            background: url(../img/icons/icon_3.png);
-          }
-        }
-        &:nth-child(4){
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_4w.png);
-          }
-          span{
-            background: url(../img/icons/icon_4.png);
-          }
-        }
-        &:nth-child(5){
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_5w.png);
-          }
-          span{
-            background: url(../img/icons/icon_5.png);
-          }
-        }
-        &:nth-child(6){
-          margin-bottom: 0;
-          &:hover span, &.on span{
-            background: url(../img/icons/icon_6w.png);
-          }
-          span{
-            background: url(../img/icons/icon_6.png);
+        @for $i from 1 to 7{
+          &:nth-child(#{$i}){
+            &:hover span, &.on span{
+              background: url(../img/icons/icon_#{$i}w.png);
+            }
+            span{
+              background: url(../img/icons/icon_#{$i}.png);
+            }
           }
         }
       }
-    }
+    } 
     .my_menu{
-      font-size: 14px;
-      font-weight: bold; 
+      @include font(14px, bold);
       margin-top: 40px;
       li{
-        font-size: 12px;
-        font-weight: normal;
+        @include font(12px);
         margin-top: 24px;
       }
     }
   }
   .now_playing{
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 400px;
+    @include position($l:0, $b:0);
+    @include size(100%, 400px);
     background-size: cover;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex($a:center, $d:column);
     padding: 20px 25px;
     .player_bg{
+      @include size;
+      @include position(0, 0);
+      @include background('album_art/iu.jpg');
       display: block;
       content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top:0;
-      left: 0;;
-      background-position: center center; 
-      background-repeat: no-repeat;
-      background-size: cover;
       filter: blur(20px);
-      background-image: url(../img/album_art/iu.jpg);
     }
     .player{
-      position: relative;
+      @include position($p:relative);
       z-index: 2;
       h5{
-        color: #fff;
-        font-size: 18px;
-        font-weight: bold;
+        @include font(18px,bold,#fff);
         margin-bottom: 17px;
       }
       .album_art{
-        width: 180px;
-        height: 180px;
+        @include size(180px, 180px);
         border-radius: 20px;
         margin-bottom: 10px;
         overflow: hidden;
         img{
-          width : 100%;
-          height: 100%;
+          @include size;
         }
       }
       .song_title{
-        font-size: 18px;
-        font-weight: bold;
-        color: $black_color_second;
+        @include font(18px, bold, $black_color_second);
       }
       .song_artist, .song_album{
-        font-size: 12px;
+        @include font(12px);
       }
       .play_btn{
-        display: flex;
-        width: 107px;
-        height: 30px;
+        @include size(107px, 30px);
+        @include flex;
         margin: 15px auto;
-        justify-content: space-between;
-        align-items: center;
         img{
           width: 100%;
         }
         .start_btn, .stop_btn{
-          width: 30px;
-          height: 30px;
+          @include size(30px, 30px);
         }
         .stop_btn{
           display: none;
         }
-        .prev_btn{
-          width: 20px;
-          height: 20px;
-        }
-        .next_btn{
-          width: 20px;
-          height: 20px;
+        .prev_btn, .next_btn{
+          @include size(20px, 20px);
         }
       }
-      .status_bar{
-        width: 100%;
-        height: 8px;
+        .status_bar{
+        @include size(100%, 8px);
         border: 1px solid rgba(0,0,0,0.1);
         border-radius: 30px;
-        div{
-          width: 0;
-          height: 100%;
-          background: $main-color;
-          transition: 0.5s;
+          div{
+            @include size(0, 100%);
+            background: $main-color;
+            transition: 0.5s;
+          }
         }
-      }
     }
   }
 }
+
 #wrap_home{ 
-  position: relative;
-  left: 240px;
-  width: 1920 - 240px;
+  @include position($p:relative, $l:240px);
+  width: 1680px;
   .page_toggle{
     span{
-      position: fixed;
+      @include position($p:fixed);
+      @include size(60px, 34px);
       display: block;
-      width: 60px;
-      height: 34px;
       z-index: 4;
       margin-left: 120px;
-      cursor: pointer;
       &.top{
+        @include arrow(top);
+        @include position(16px, 50%, null);
         display: none;
-        top: 16px;
-        left: 50% ;
         transform: translateX(-50%);
-        background: url(../img/icons/arrow_top.png) center center no-repeat;
-        background-size: cover;
         animation: toggle_move_top 2s infinite;
-        &:hover{
-          background: url(../img/icons/arrow_top_green.png) center center no-repeat;
-        }
       }
       &.bottom{
-        bottom: 16px;
-        left: 50%;
+        @include arrow(bottom);
+        @include position($b:16px, $l:50%, $p:null);
         transform: translateX(-50%);
-        background: url(../img/icons/arrow_bottom.png) center center no-repeat;
-        background-size: cover;
         animation: toggle_move_bottom 2s infinite;
-        &:hover{
-          background: url(../img/icons/arrow_bottom_green.png) center center no-repeat;
-        }
       }
     }
   }
   section{
-    height: 100vh;
-    left: 0;
-    width: 1920px - 240px;
-    position: relative;
+    @include size(1680px, 100vh);
+    @include position($p:relative, $l:0);
     &.visual{
-      position: relative;
       .visual_group{
-        width: 100%;
-        height: 100%;
+        @include size;
         li{
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100%;
-          height: 100%;
+          @include position(0, 0);
+          @include size;
           transition: 2s;
           overflow: hidden;
+          @for $i from 1 to 4{
+            &:nth-child(#{$i}){
+              opacity: 0;
+              .visual_img{
+                @include background('visual#{$i}.jpeg');
+                @include size;
+              }
+            }
+          }
           &:nth-child(1){
             opacity: 1;
-            .visual_img{
-              background: url(../img/visual2.jpeg) top center no-repeat;
-              background-size: cover;
-            }
-          }
-          &:nth-child(2){
-            opacity: 0;
-            .visual_img{
-              background: url(../img/visual1.jpeg) center center no-repeat;
-              background-size: cover;
-            }
-          }
-          &:nth-child(3){
-            opacity: 0;
-            .visual_img{
-              background: url(../img/visual3.jpeg) center center no-repeat;
-              background-size: cover;
-            }
-          }
-          // &:nth-child(4){
-          //   opacity: 0;
-          //   .visual_img{
-          //     background: url(../img/visual4.jpeg) center center no-repeat;
-          //     background-size: cover;
-          //   }
-          // }
-          .visual_img{
-            width: 100%;
-            height: 100%;
           }
           .visual_text{
-            position: absolute;
+            @include position(160px, 80px);
             width: 100%;
-            top: 160px;
-            left: 80px;
             h2{
+              @include position($l:0);
+              @include font(60px,bold,$white_color);
               overflow: hidden;
-              position: absolute;
-              font-size: 60px;
-              font-weight: bold;
-              color: $white_color;
               line-height: 80px;
-              left: 0;
               margin-bottom: 20px;
             }
             p{
+              @include position(220px, 0);
               color: $white_color_second;
-              position: absolute;
-              top: 220px;
-              left: 0;
             }
           }
         }  
       }
       .sub_visual{
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 90px;
-        left: 80px;
-        width: 1530px;
-        height: 290px;
+        @include position($l:80px, $b:90px);
+        @include size(1530px, 290px);
+        @include flex($d:null);
         overflow: hidden;
         li{
-          position: relative;
-          top: 0;
-          left: 0;;
+          @include position(0, 0, relative);
+          @include size(470px, 290px);
           border-radius: 20px;
-          width: 470px;
-          height: 290px;
           box-shadow: 0 3px 6px rgba(0,0,0,0.4);
-          position: relative;
           transition: 1s;
           opacity: 0.8;
           transform: scale(0.8);
@@ -535,142 +431,86 @@ aside{
             background: rgba(0,0,0,0.1);
           }
           .sub_visual_text{
-            position: absolute;
+            @include position($l:0, $b:5px);
             padding: 20px;
-            bottom: 5px;
-            left: 0;
             h4{
-              font-family: "poppins";
-              font-weight: bold;
-              font-size: 30px;
-              color: $white_color;
+              @include font(30px, bold, $white_color, "poppins");
             }
             p{
-              font-family: "noto sans kr";
-              font-size: 24px;
-              color: #eee;
+              @include font(24px, null, #eee, "noto sans kr");
             }
           }
-          &:nth-child(1){
-            background: url(../img/visual2.jpeg) center center no-repeat;
-            background-size: cover;
+          @for $i from 1 to 4{
+            &:nth-child(#{$i}){
+              @include background('visual#{$i}.jpeg');
+            }
           }
-          &:nth-child(2){
-            background: url(../img/visual1.jpeg)center center no-repeat;
-            background-size: cover;
-          }
-          &:nth-child(3){
-            background: url(../img/visual3.jpeg)center center no-repeat;
-            background-size: cover;
-          }
-          // &:nth-child(4){
-          //   background: url(../img/visual4.jpeg)top center no-repeat;
-          //   background-size: cover;
-          // }
         }
       }
     }
     &.new_album{
       overflow: hidden;
       .new_albums{
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left:0;
-        top: 0;
+        @include size;
+        @include position(0, 0);
         li{
           .black_bg{
             background: rgba(0,0,0,0.2);
           }
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top:0;
-          left: 0;
+          @include size;
+          @include position(0, 0);
           opacity: 0;
           transition: 2s;
           &.on{
             opacity: 1;
             z-index: 1;
           }
-          &.album01{
-            background: url(../img/new_album.jpg) top center no-repeat;
-            background-size: cover;
-          }
-          &.album02{
-            background: url(../img/new_album2.jpg) top center no-repeat;
-            background-size: cover;
-          }
-          &.album03{
-            background: url(../img/new_album3.jpg) center center no-repeat;
-            background-size: cover;
-          }
-          &.album04{
-            background: url(../img/new_album4.jpg) center center no-repeat;
-            background-size: cover;
+          @for $i from 1 to 5{
+            &.album0#{$i}{
+              @include background('new_album#{$i}.jpg');
+            }
           }
         }
         .new_album_text{
-          position: absolute;
-          left: 80px;
-          top: 240px;
+          @include position(240px, 80px);
           opacity: 0.7;
           &:hover{
             opacity: 1;
           }
           h2{
-            font-family: "poppins";
-            font-size: 70px;
-            font-weight: bold;
-            color: #fff;
-            position: relative;
-            left: -4px;
-            top: 10px;
+            @include font(70px, bold, #fff, "poppins");
+            @include position(10px, -4px, relative);
             line-height: 90px;
           }
           p{
-            font-size: 24px;
-            font-weight: bold;
-            color: $white_color;
+            @include font(24px, bold, $white_color);
           }
           .play_btn{
+            @include size(200px, 60px);
             cursor: pointer;
-            width: 200px;
-            height: 60px;
             margin-top: 80px;
             img{
-              width: 100%;
-              height: 100%;
+              @include size;
             }
           }
         }
       }
-      
       .album_slide{
-        width: 760px;
-        height: 480px;
-        position: absolute;
-        left: 900px;
-        top: 50%;
+        @include size(760px, 480px);
+        @include position(50%, 900px);
         transform: translateY(-50%);
         overflow: hidden;
         z-index: 2;
         ul{
-          position: absolute;
-          left:0;
-          top:0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
+          @include position(0, 0);
+          @include flex;
           transition: 1s;
           li{
-            img{
-              width: 100%;
-              height: 100%;
-            }
-            width: 480px;
-            height: 480px;
+            @include size(480px, 480px);
             opacity: 0.5;
+            img{
+              @include size;
+            }
             &.on{
               animation: album_change 1s forwards;
             }
@@ -681,40 +521,23 @@ aside{
         }
       }
       .toggle_btn{
-        position: absolute;
-        width: 134px;
-        height: 60px;
-        top: 150px;
-        left: 900px;
-        display: flex;
-        justify-content: space-between;
+        @include position(150px, 900px);
+        @include size(134px, 60px);
+        @include flex($a:null);
         z-index: 2;
         span{
-          width: 35px;
-          height: 60px;
-          cursor: pointer;
+          @include size(35px, 60px);
           &:first-child{
-            background: url(../img/icons/arrow_left.png) left center no-repeat;
-            background-size: cover;
-            &:hover{
-              background: url(../img/icons/arrow_left_green.png) left center no-repeat;
-              background-size: cover;
-            }
+            @include arrow(left);
           }
           &:last-child{
-            background: url(../img/icons/arrow_right.png) right center no-repeat;
-            background-size: cover;
-            &:hover{
-              background: url(../img/icons/arrow_right_green.png) left center no-repeat;
-              background-size: cover;
-            }
+            @include arrow(right);
           }
         }
       }
     }
     &.artist{
-      background: url(../img/artist_bg.jpg) center center no-repeat;
-      background-size: cover;
+      @include background('artist_bg.jpg');
       &.on{
         .artist_img{
           animation: artist_move 2s forwards;
@@ -730,72 +553,46 @@ aside{
         }
       }
       .artist_img{
-        position: absolute;
-        bottom: -100%;
-        left: 0;
-        width: 829px;
-        height: 1180px;
+        @include position($l:0, $b:-100%);
+        @include size(829px, 1180px);
         img{
-          width: 100%;
-          height: 100%;
+          @include size;
         }
       }
       .artist_text{
-        position: absolute;
-        bottom: 285px;
-        left: 180px;
+        @include position($l:180px, $b:285px);
         z-index: 2;
         opacity: 0;
         h3{
-          font-family: "noto sans kr";
-          font-size: 30px;
-          font-weight: bold;
+          @include font(30px, bold);
         }
         h2{
-          font-size: 100px;
-          font-weight: bold;
-          color: #fff;
+          @include font(100px, bold, #fff);
         }
       }
       .artist_list{
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        width: 741px;
-        height: 840px;
+        @include position($r:0, $b:0);
+        @include size(741px, 840px);
         h4{
-          font-size: 24px;
-          font-weight: bold;
-          color: #fff;
+          @include font(24px, bold, #fff);
         }
         .popular_song{
           opacity: 0;
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 520px;
-          height: 450px;
+          @include position(0, 0);
+          @include size(520px, 450px);
           .popular_song_title{
             color: #fff;
-            display: flex;
-            justify-content: space-between;
+            @include flex($a:null);
             ul{
-              width: 110px;
-              justify-content: space-between;
-              display: flex;
-              height: 40px;
+              @include size(110px, 40px);
+              @include flex($a:null);
               img{
-                width: 15px;
-                height: 15px;
+                @include size(15px, 15px);
               }
               li{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                font-size: 12px;
-                width: 40px;
-                height: 40px;
+                @include size(40px, 40px);
+                @include font(12px);
+                @include flex(center,center,column);
                 span{
                   width: 50px;
                 }
@@ -803,39 +600,28 @@ aside{
             }
           }
           .popular_song_list{
+            @include size(520px, 360px);
             overflow-y: scroll;
-            width: 520px;
-            height: 360px;
             li{
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
+              @include flex;
               padding: 20px 8px 14px;
               border-bottom: 1px solid #ccc;
               .popular_song_songs{
-                display: flex;
-                align-items: center;
+                @include flex($j:null);
                 div{
-                  width: 60px;
-                  height: 60px;
+                  @include size(60px, 60px);
                   border-radius: 4px;
                   overflow: hidden;
                   margin-right: 14px;
                   img{
-                    width: 100%;
-                    height: 100%;
+                    @include size;
                   }
                 }
                 p{
-                  font-weight: bold;
-                  color: $black_color_second;
-                  font-size: 18px;
+                  @include font(18px, bold, #fff);
                   line-height: 28px;
-                  color: #fff;
                   span{
-                    font-weight: normal;
-                    font-size: 14px;
-                    color:#ccc;
+                    @include font(14px, normal, #ccc);
                   }
                 }
               }
@@ -850,54 +636,42 @@ aside{
         }
         .popular_album{
           opacity: 0;
-          width: 100%;
-          height: 284px;
-          position: absolute;
-          bottom: 100px;
-          right: 0;
+          @include size(100%, 284px);
+          @include position($b:100px, $r:0);
           ul{
             margin-top: 30px;
-            display: flex;
-            justify-content: space-between;
+            @include flex($a:null);
             li{
               width: 180px;
               margin-right: 40px;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
+              @include flex($j:null, $d:column);
               .popular_album_art{
-                width: 142px;
-                height: 142px;
+                @include size(142px, 142px);
+                @include position($p:relative);
                 border-radius: 50%;
                 overflow: hidden;
-                position: relative;
                 margin-bottom: 20px;
                 div{
-                  width: 40px;
-                  height: 40px;
+                  @include size(40px, 40px);
+                  @include position(50%, 50%);
                   border-radius: 50%;
                   background: #ccc;
-                  position: absolute;
-                  top:50%;
-                  left: 50%;
                   transform: translate(-50%,-50%);
                 }
                 img{
-                  width: 100%;
-                  height: 100%;
+                  @include size;
                 }
               }
               .popular_album_song{
                 text-align: center;
                 color: #eee;
                 h6{
-                  font-size: 20px;
+                  @include font(20px, bold);
                   height: 50px;
                   line-height: 24px;
-                  font-weight: bold;
                 }
                 p{
-                  font-size: 18px;
+                  @include font(18px);
                 }
               }
             }
@@ -910,54 +684,40 @@ aside{
       overflow: hidden;
       display: flex;
       .magazine_text{
-        width: 50%;
-        height: 100%;
+        @include size(50%, 100%);
         position: relative;
         .scroll_bar{
+          @include size(10px, 450px);
+          @include position(50%, 100px);
             border-radius: 25px;
-            width: 10px;
-            height: 450px;
-            position: absolute;
-            left: 100px;
-            top: 50%;
             transform: translateY(-50%);
             border: 1px solid #ccc;
             div{
+              @include size(100%, 25%);
               background: $main_gradient;
-              width: 100%;
-              height: 25%;
               border-radius: 25px;
               transition: 2s;
             }
         }
         .magazine_index{
-          position: absolute;
-          top: 240px;
-          left: 180px;
+          @include position(240px, 180px);
           li{
             background: black;
-            position: absolute;
-            top:0;
-            left:0;
+            @include position(0, 0);
             opacity: 0;
             transition: 1s;
             &:first-child{
               opacity: 1;
             }
             h3{
-              font-family: 'noto sans kr';
-              font-weight: bold;
+              @include font(null, bold);
               margin-bottom: 40px;
             }
             h6{
-              font-size: 18px;
-              font-weight: bold;
-              color:#398B5A;
+              @include font(18px, bold, #398B5A);
             }
             h2{
-              font-size: 40px;
-              font-weight: bold;
-              color: #fff;
+              @include font(40px, bold, #fff);
               margin-bottom: 60px;
             }
             p{
@@ -968,58 +728,29 @@ aside{
         }
       }
       .magazine_img{
-        width: 50%;
-        height: 100%;
+        @include size(50%);
         position: relative;
         ul{
-          display: flex;
-          flex-direction: column;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 400%;
+          @include size(100%, 400%);
+          @include position(0, 0);
+          @include flex($j:null, $a:null, $d:column);
           transition: 2s;
         }
         li{
-          width: 100%;
-          height: 100%;
-          &:nth-child(1){
-            background: url(../img/magazine1.jpg) center center no-repeat;
-            background-size: cover;
-          }
-          &:nth-child(2){
-            background: url(../img/magazine2.jpg) center center no-repeat;
-            background-size: cover;
-          }
-          &:nth-child(3){
-            background: url(../img/magazine3.jpg) center center no-repeat;
-            background-size: cover;
-          }
-          &:nth-child(4){
-            background: url(../img/magazine4.jpg) center center no-repeat;
-            background-size: cover;
+          @include size;
+          @for $i from 1 to 5{
+            &:nth-child(#{$i}){
+              @include background('magazine#{$i}.jpg');
+            }
           }
         }
       }
     }
-  }  
-}
-.sub_menu{
-  width: 100%;
-  height: 100%;
-  background: #fff;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  transition: 1s;
-  z-index: 5;
-  &.on{
-    left: 240px;
   }
-}
+}  
+
 #wrap_chart{
-  width: 1920 - 240px;
+  width: 1680px;
   padding: 100px 80px;
   .chart{
     .chart_text{
@@ -1029,9 +760,7 @@ aside{
         color: #c7c7c7;
       }
       .chart_category{
-        position: absolute;
-        top: 48px;
-        left: 455px;
+        @include position(48px, 455px);
         display: flex;
         li{
           color: #c7c7c7;
@@ -1047,77 +776,56 @@ aside{
       }
     }
     .chart_main{
-      position: relative;
-      width: 100%;
-      height: 650px;
-      top: 40px;
+      @include position(40px, $p:relative);
+      @include size(100%,650px);
       img{
-        width: 100%;
-        height: 100%;
+        @include size;
       }
       .no1{
-        width: 300px;
-        height: 100%;
+        @include size(300px);
         .no1_art{
-          width: 300px;
-          height: 300px;
+          @include size(300px, 300px);
           border-radius: 20px;
           overflow: hidden;
           box-shadow: -20px 20px 20px rgba(0,0,0,0.4);
         }
         .no1_title{
+          @include font(40px, bold, $black_color_second);
+          @include size(100%, 150px);
+          @include text;
           padding-top: 30px;
-          font-family: 'noto sans kr';
-          font-size: 40px;
-          font-weight: bold;
           line-height: 50px;
-          height: 150px;
-          width: 100%;
-          color: $black_color_second;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
           .number{
             font-family: 'poppins';
           }
         }
         .no1_artist{
+          @include font(20px, bold);
+          @include text;
           padding-top: 20px;
-          font-weight: bold;
-          font-size: 20px;
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
         }
         .no1_box{
           margin-top: 36px;
-          display: flex;
-          flex-direction: column;
+          @include flex($j:null, $a:null, $d: column);
           >div{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex;
             height: 45px;
             &:first-child{
               border-bottom: 1px solid $gray_color;
               .date{
-                font-family: "poppins";
-                color: $black_color_second;
+                @include font($c:$black_color_second, $f:'poppins');
               }
               .long{
-                font-size: 20px;
-                font-weight: bold;
-                color: $main_color;
+                @include font(20px, bold, $main-color);
               }
             }
             &:last-child{
               div{
-                font-family: 'poppins';
-                color: $main_color;
-                height: 20px;
+                @include font($c:$main-color, $f:'poppins');
+                height: 40px;
                 display: flex;
                 span{
-                  width: 25px;
+                  @include size(25px, 25px);
                   margin-right: 10px;
                 }
               }
@@ -1126,16 +834,11 @@ aside{
         }
       }
       .chart_list{
-        position: absolute;
-        top: 0;
-        left: 465px;
-        width: 1070px;
-        height: 100%;
+        @include position(0, 465px);
+        @include size(1070px);
         .chart_list_title{
+          @include position(-42px, 60px);
           display: flex;
-          position: absolute;
-          top: -42px;
-          left: 60px;
           font-weight: bold;
           li{
             &:nth-child(1){
@@ -1150,19 +853,15 @@ aside{
           }
         }
         .chart_list_list{
-          width: 100%;
-          height: 100%;
+          @include size;
           overflow-y: scroll;
           
           .chart_lists{
-            width: 100%;
-            height: 50px;
+            @include size(100%, 50px);
+            @include flex($j:null);
             background: #f5f5f5;
             color: $black_color_second;
-            font-family: 'noto sans kr';
             border-radius: 14px;
-            display: flex;
-            align-items: center;
             padding: 0 18px;
             margin-bottom: 10px;
             cursor: pointer;
@@ -1171,20 +870,16 @@ aside{
               color: #fff;
             }
             >ul{
+              @include flex;
               width: 100%;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
               .updown{
+                @include font(12px, bold);
                 width: 20px;
                 margin-right: 18px;
-                font-size: 12;
-                font-weight: bold;
                 &.down{
                   color: red;
                   img{
-                    width: 10px;
-                    height: 7px;
+                    @include size(10px, 7px);
                     vertical-align: middle;
                     margin-right: 1px;
                   }
@@ -1192,54 +887,43 @@ aside{
                 &.up{
                   color: blue;
                   img{
-                    width: 10px;
-                    height: 7px;
+                    @include size(10px, 7px);
                     vertical-align: middle;
                     margin-right: 1px;
                   }
                 }
                 &.normal{
                   img{
-                    width: 18px;
-                    height: 2px;
+                    @include size(18px, 2px);
                     vertical-align: middle;
                   }
                 }
               }
+              @mixin chart_list($w, $m) {
+                width: $w;
+                margin-right: $m;
+              }
               .rank{
-                font-family: 'poppins';
-                width: 20px;
-                font-size: 18px;
-                margin-right: 30px;
+                @include font(18px, $f:'poppins');
+                @include chart_list(20px, 30px);
               }
               .chart_art{
-                width: 36px;
-                height: 36px;
+                @include chart_list(null, 24px);
+                @include size(36px, 36px);
                 border-radius: 4px;
-                margin-right: 24px;
               }
               .chart_songs{
-                font-size: 16px;
-                font-weight: bold;
-                width: 278px;
-                margin-right: 24px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                @include font(16px, bold);
+                @include text;
+                @include chart_list(278px, 24px);
               }
               .chart_artist{
-                width: 120px;
-                margin-right: 70px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                @include chart_list(120px, 70px);
+                @include text;
               }
               .chart_album{
-                width: 260px;
-                margin-right: 24px;
-                text-overflow: ellipsis;
-                overflow: hidden;
-                white-space: nowrap;
+                @include chart_list(260px, 24px);
+                @include text;
               }
             }
           }
@@ -1247,11 +931,8 @@ aside{
       }
     }
     .play_icon{
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 80px;
-      height: 20px;
+      @include size(80px, 20px);
+      @include flex;
       li:last-child{
         height: 5px;
       }
@@ -1262,34 +943,19 @@ aside{
   z-index: 2;
   .trend{
     padding: 100px 80px;
-    width: 1920 - 240px;
+    width: 1680px;
     .toggle_btn{
+      @include size(120px, 30px);
+      @include flex($a:null);
       position: absolute;
-      display: flex;
-      justify-content: space-between;
-      width: 120px;
-      height: 30px;
+      
       .left{
-        cursor: pointer;
-        width: 18px;
-        height: 30px;
-        background: url(../img/icons/arrow_left.png) left center no-repeat;
-        background-size: cover;
-        &:hover{
-          background: url(../img/icons/arrow_left_green.png) left center no-repeat;
-          background-size: cover;
-        }
+        @include size(18px,30px);
+        @include arrow(left);
       }
       .right{
-        cursor: pointer;
-        width: 18px;
-        height: 30px;
-        background: url(../img/icons/arrow_right.png) right center no-repeat;
-        background-size: cover;
-        &:hover{
-          background: url(../img/icons/arrow_right_green.png) right center no-repeat;
-          background-size: cover;
-        }
+        @include size(18px, 30px);
+        @include arrow(right);
       }
     }
     .trend_title{
@@ -1298,27 +964,19 @@ aside{
       }
     }
     .trend_main{
-      position: relative;
+      @include position(0, 0, relative);
       width: 100%;
-      top: 0;
-      left: 0;
       .toggle_btn{
-        left: 50%;
-        top: 0;
+        @include position(0, 50%);
         transform: translateX(-50%);
       }
       .trend_slide{
-        position: absolute;
-        width: 100%;
-        height: 400px;
-        top: 40px;
-        left: 0;
+        @include position(40px, 0);
+        @include size(100%, 400px);
         .trend_imgs{
           li{
-            position: absolute;
-            width: 700px;
-            height: 400px;
-            top: 50%;
+            @include position(50%, null);
+            @include size(700px, 400px);
             transition: 1s;
             transform: translate(0,-50%) scale(0.8);
             &.trend_0{
@@ -1361,77 +1019,54 @@ aside{
               }
             }
             .trend_img_texts{
-              position: absolute;
-              left: 30px;
-              bottom: 30px;
+              @include position($l:30px, $b:30px);
               h2{
-                font-size: 50px;
-                font-weight: bold;
-                color: #fff;
+                @include font(50px, bold, #fff);
               }
               p{
-                font-size: 18px;
-                font-weight: bold;
-                color: $gray_color;
+                @include font(18px, bold, $gray_color);
               }
             }
             .trend_play_btn{
-              width: 200px;
-              height: 60px;
-              position: absolute;
-              right: 30px;
-              bottom: 30px;
+              @include size(200px, 60px);
+              @include position($r:30px, $b:30px);
             }
           }
         }
       }
     }
     .trend_songs{
-      position: relative;
-      top: 480px;
-      left: 0;
+      @include position(480px, 0, relative);
       width: 100%;
       .trend_songs_title{
         position: relative;
         h3{
-          font-size: 30px;
-          font-weight: bold;
-          color: $black_color_second;
+          @include font(30px, bold, $black_color_second);
         }
         .toggle_btn{
+          @include position(10px, $r:0, $p:null);
           width: 80px;
-          right: 0;
-          top: 10px;
         }
       }
       .trend_list_slide{
+        @include size(100%, 250px);
         margin-top: 20px;
-        width: 100%;
-        height: 250px;
         overflow: hidden;
         .trend_songs_list{
-          position: relative;
-          left: 0;
-          top:0;
-          display: flex;
-          justify-content: space-between;
+          @include position(0, 0, relative);
+          @include flex($a:null);
         }
         li{
+          @include size(150px, 220px);
+          @include flex($j:null, $d:column);
           position: relative;
-          width: 150px;
-          height: 220px;
-          display: flex;
           text-align: center;
-          flex-direction: column;
-          align-items: center;
           .trend_songs_art{
+            @include size(150px, 150px);
             position: relative;
-            width: 150px;
-            height: 150px;
             box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
             >img{
-              width: 150px;
-              height: 150px;
+              @include size;
             }
             &:hover{
               .black_bg{
@@ -1442,9 +1077,7 @@ aside{
               opacity: 0;
               transition: 1s;
               .btn{
-                position: absolute;
-                left: 50%;
-                top: 50%;
+                @include position(50%, 50%);
                 transform: translate(-50%, -50%);
                 cursor: pointer;
               }
@@ -1453,11 +1086,13 @@ aside{
           .trend_songs_text{
             margin-top: 10px;
             h6{
-              font-size: 16px;
-              font-weight: bold;
-              color: $black_color;
+              @include font(16px, bold, $black_color);
+              @include text;
+              @include size(150px, null);
             }
             p{
+              @include text;
+              @include size(150px,null);
               color: $black_color;
             }
           }
@@ -1471,10 +1106,8 @@ aside{
   background-color: black;
   overflow: hidden;
   .page_toggle{
-    width: 20px;
-    height: 34px;
-    position: absolute;
-    top: 50%;
+    @include size(20px, 34px);
+    @include position(50%, null);
     transform: translateY(-50%);
     z-index: 3;
     cursor: pointer;
@@ -1483,40 +1116,31 @@ aside{
     }
     &.left{
       left: 30px;
-      background: url(../img/icons/arrow_left.png) center center no-repeat;
-      background-size: cover;
       opacity: 0.8;
       animation: toggle_move_left 2s infinite;
+      @include arrow(left);
       &:hover{
-        background: url(../img/icons/arrow_left_green.png) center center no-repeat;
-        background-size: cover;
         opacity: 1;
       }
     }
     &.right{
       right: 290px;
-      background: url(../img/icons/arrow_right.png) center center no-repeat;
-      background-size: cover;
       opacity: 0.8;
       animation: toggle_move_right 2s infinite;
+      @include arrow(right);
       &:hover{
-        background: url(../img/icons/arrow_right_green.png) center center no-repeat;
-        background-size: cover;
         opacity: 1;
       }
     }
   }
   .podcast{
-    width: (1920 - 240)*2px;
-    height: 100vh;
-    position: relative;
+    @include size(1680*2px, 100vh);
+    @include position(null, 0, relative);
     display: flex;
     transition: 1s;
-    left: 0;
     >li{
+      @include size(50%);
       padding: 100px 80px;
-      width: 50%;
-      height: 100%;
       position: relative;
       &.on{
         .article{
@@ -1527,8 +1151,7 @@ aside{
         .article{
           left: 740px;
           img{
-            width: 940px;
-            height: auto;
+            @include size(940px, auto);
           }
           .blur{
             background: radial-gradient(circle, rgba(255,221,0,1) 0%, rgba(255,255,0,1) 100%);
@@ -1541,76 +1164,57 @@ aside{
         }
       }
       .article{
-        position: absolute;
-        left: 800px;
-        bottom: -100%;
+        @include position($l:800px, $b:-100%);
         .blur{
-          position: absolute;
-          left: 55%;
-          top: 65%;
+          @include position(65%, 55%);
+          @include size(700px, 700px);
           transform: translate(-50%, -50%);
-          width: 700px;
-          height: 700px;
           background: radial-gradient(circle, rgba(219,37,232,1) 0%, rgba(238,8,130,1) 100%);
           border-radius: 50%;
           filter: blur(50px);
         }
         img{
+          @include size(780px, auto);
           position: relative;
           z-index: 1;
-          width: 780px;
-          height: auto;
         }
       }
       .podcast_main{
-        position: absolute;
-        left: 80px;
-        bottom: 100px;
-        width: 840px;
+        @include position($l:80px, $b:100px);
+        @include size(840px, null);
         z-index: 3;
         .podcast_text{
           h2{
-            font-size: 70px;
-            font-weight: bold;
+            @include font(70px, bold, #fff);
             line-height: 80px;
-            color:#fff;
             width: 600px;
           }
           p{
+            @include font(18px, normal, $gray_color, 'poppins');
             margin-top: 20px;
-            font-family: 'poppins';
-            color: $gray_color;
-            font-size: 18px;
           }
           .play_btn{
             margin-top: 50px;
             img{
-              width: 200px;
-              height: 60px;
+              @include size(200px, 60px);
             }
           }
         }
         .recently{
           width: 100%;
           .recently_title{  
-            display: flex;
-            justify-content: space-between;
+            @include flex($a:null);
             margin-top: 110px;
             h4{
-              font-family: 'poppins';
-              font-size: 30px;
-              font-weight: bold;
-              color: #fff;
+              @include font(30px, bold, #fff, 'poppins');
             }
           }
           .contents{
+            @include flex($a:null);
             margin-top: 20px;
-            display: flex;
             width: 100%;
-            justify-content: space-between;
             .recently_img{
-              width: 260px;
-              height: 140px;
+              @include size(260px, 140px);
               border-radius: 12px;
               background: #ccc;
               box-shadow: 3px 3px 6px rgba(255,255,255,0.5);
@@ -1630,7 +1234,7 @@ aside{
   .musicvideo{
     position: relative;
     padding: 100px 80px;
-    width: 1920 - 240px;
+    width: 1680px;
     .musicvideo_title{
       position: relative;
       z-index: 1;
@@ -1639,41 +1243,29 @@ aside{
       }
     }
     .musicvideo_main{
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 650px;
+      @include position(0, 0);
+      @include size(100%, 650px);
       background: #fff;
       z-index: 0;
       .video_play{
-        width: 100%;
-        height: 100%;
+        @include size;
         video{
+          @include size;
           object-fit: cover;
-          width: 1680px;
-          height: 650px;
         }
         .movie_controler{
-          width: 100%;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 10px;
+          @include position($b:0, $l:0);
+          @include size(100%, 10px);
           background: #eee;
           .movie_underbar{
+            @include size(0);
             background: $main_gradient2;
-            width: 0;
-            height: 100%;
             transition: 1s;
           }
         }
         .mute_btn, .muteX_btn{
-          width: 30px;
-          height: 30px;
-          position: absolute;
-          left: 80px;
-          bottom: 30px;
+          @include size(30px, 30px);
+          @include position($l:80px, $b:30px);
           cursor: pointer;
           opacity: 0;
           img{
@@ -1696,73 +1288,51 @@ aside{
           }
         }
         .musicvideo_albumart{
-          width: 200px;
-          height: 200px;
-          position: absolute;
-          top: 240px;
-          left: 80px;
+          @include size(200px, 200px);
+          @include position(240px, 80px);
           opacity: 0;
           transition: 1s;
           img{
-            width: 100%;
-            height: 100%;
+            @include size;
           }
         }
         .musicvideo_text{
-          position: absolute;
-          left: 340px;
-          top: 240px;
+          @include position(240px, 340px);
           opacity: 0;
           transition: 1s;
           h2{
-            font-size: 50px;
-            font-family: 'poppins';
-            font-weight: bold;
-            color: #fff;
+            @include font(50px, bold, #fff, 'poppins');
           }
           p{
-            font-size: 20px;
-            font-weight: bold;
-            color: #eee;
+            @include font(20px, bold, #eee);
           }
         }
         .video_play_btn{
           display: none;
         }
         .video_play_btn, .video_stop_btn{
-          position: absolute;
-          left: 50%;
-          top: 50%;
+          @include position(50%, 50%);
           transform: translate(-50%,-50%);
           opacity: 0;
           transition: 1s;
           cursor: pointer;
           img{
-            width: 40px;
-            height: 40px;
+            @include size(40px, 40px);
           }
         }
       } 
     }
     .popular_video{
-      position: absolute;
-      top: 670px;
-      left: 80px;
+      @include position(670px, 80px);
       .popular_video_title{
-        display: flex;
+        @include flex;
         width: 320px;
-        justify-content: space-between;
-        align-items: center;
         h5{
-          font-size: 30px;
-          font-weight: bold;
-          color: $black_color_second;
+          @include font(30px, bold, $black_color_second);
         }
         ul{
-          width: 80px;
-          height: 15px;
-          display: flex;
-          justify-content: space-between;
+          @include size(80px, 15px);
+          @include flex($a:null);
           color: #c7c7c7;
           line-height: 15px;
           li{
@@ -1776,18 +1346,15 @@ aside{
         }
       }
       .popular_video_list{
+        @include flex($a:null);
         margin-top: 24px;
         width: 1520px;
-        display: flex;
-        justify-content: space-between;
         .videos{
-          width: 220px;
-          height: 120px;
+          @include size(220px, 120px);
           .snapshot{
             cursor: pointer;
+            @include size(100%, 120px);
             position: relative;
-            width: 100%;
-            height: 120px;
             border-radius: 12px;
             background: #ccc;
             overflow: hidden;
@@ -1797,8 +1364,7 @@ aside{
               z-index: 2;
             }
             video{
-              width: 220px;
-              height: 120px;
+              @include size(200px, 120px);
               object-fit: cover;
             }
             .black_bg{
@@ -1809,17 +1375,13 @@ aside{
             position: relative;
             margin-top: 10px;
             h6{
-              font-size: 18px;
-              font-weight: bold;
-              color: $black_color_second;
+              @include font(18px, bold, $black_color_second);
             }
             p{
               color: $gray_color;
             }
             .more_btn{
-              position: absolute;
-              right: 10px;
-              top: 50%;
+              @include position(50%, $r:10px);
               transform: translateY(-50%);
             }
           }
@@ -1832,33 +1394,29 @@ aside{
   z-index: 2;
   .dj{
     padding: 100px 80px;
-    width: 1920 - 240px;
+    width: 1680px;
     .dj_title{
       p{
         color: #c7c7c7;
       }
     }
     .dj_main{
-      width: 100%;
-      height: 500px;
+      @include size(100%, 500px);
       .dj_main_ul{
         margin-top: 30px;
         display: flex;
         height: 100%;
         overflow: hidden;
         .dj_lists{
+          @include size(17%);
           transition: 0.5s;
-          width: 17%;
           position: relative;
-          height: 100%;
           background: #ddd;
           .black_bg{
             background: rgba(0,0,0,0.6);
           }
           .dj_main_text{
-            position: absolute;
-            left: 25px;
-            bottom: 50px;
+            @include position($l:25px, $b:50px);
             .main_tags{
               span{
                 color: $main_color;
@@ -1866,11 +1424,9 @@ aside{
               }
             }
             h2{
+              @include font(20px, bold, #eee);
               margin: 10px 0;
-              font-size: 20px;
               height: 70px;
-              font-weight: bold;
-              color: #eee;
             }
             .dj_play_btn{
               display: none;
@@ -1919,25 +1475,19 @@ aside{
                 margin-bottom: 30px;
               }
               p{
+                @include font(16px, null, $gray_color);
                 display: block;
-                font-size: 16px;
-                color: $gray_color;
               }
               .dj_play_btn{
+                @include position(50px, $r:-120px);
                 display: block;
-                position: absolute;
-                right: -120px;
-                top: 50px;
                 cursor: pointer;
                 img{
-                  width: 50px;
-                  height: 50px;
+                  @include size(50px, 50px);
                 }
               }
               ul{
-                position: absolute;
-                right: 0px;
-                bottom: 0px;
+                @include position(0, 0);
               }
             }
           }
@@ -1948,28 +1498,21 @@ aside{
       margin-top: 60px;
       .popular_dj_title{
         h5{
-          font-size: 24px;
-          font-weight: bold;
-          color: $black_color_second;
+          @include font(24px, bold, $black_color_second);
         }
       }
       .popular_dj_list{
-        position: relative;
-        top: 20px;
-        left: 0;
-        display: flex;
-        justify-content: space-between;
+        @include position(20px, 0, relative);
+        @include flex($a:null);
         >li{
           display: flex;
           .dj_art{
+            @include size(100px, 100px);
             position: relative;
-            width: 100px;
-            height: 100px;
             border-radius: 50%;
             box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
             img{
-              width: 100%;
-              height: 100%;
+              @include size;
               border-radius: 50%;
             }
           }
@@ -1986,20 +1529,16 @@ aside{
               }
             }
             h2{
+              @include font(14px, bold);
               margin: 10px 0;
-              font-size: 14px;
               height: 40px;
               line-height: 20px;
-              font-weight: bold;
             }
             p{
-              font-size: 10px;
-              color: $gray_color;
+              @include font(10px, null, $gray_color);
             }
             ul{
-              position: absolute;
-              right: 0;
-              bottom: 0;
+              @include position($r:0, $b:0);
               display: flex;
               font-size: 10px;
               li{
