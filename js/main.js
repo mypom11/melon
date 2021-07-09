@@ -335,7 +335,7 @@ let songArr = []
 function ArtistDisplay(songs){
     let filterd = songs.filter(song => song.artist == '아이유')
     trendSonglength = filterd.length
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 8; i++){
         let ranSongs = Math.floor(Math.random()*trendSonglength)
         let ranSong = filterd[ranSongs]
         songArr.push(ranSong) 

@@ -710,6 +710,222 @@
             "gerne":"Dance",
             "albumart":"img/album_art/iu3.jpg",
             "song":"null"
+        },
+        {
+            "rank":"79",
+            "title":"안녕",
+            "artist":"폴킴",
+            "album":"호텔 델루나 OST Part.10",
+            "gerne":"Balad",
+            "albumart":"img/album_art/poulkim.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"80",
+            "title":"시작",
+            "artist":"가호(Gaho)",
+            "album":"이태원 클라쓰 OST Part.2",
+            "gerne":"Balad",
+            "albumart":"img/album_art/gaho.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"81",
+            "title":"너를 만나",
+            "artist":"폴킴",
+            "album":"너를 만나",
+            "gerne":"balad",
+            "albumart":"img/album_art/poulkim1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"82",
+            "title":"이제 나만 믿어요",
+            "artist":"임영웅",
+            "album":"내일은 미스터트롯 우승자 특전곡",
+            "gerne":"Balad",
+            "albumart":"img/album_art/hero.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"83",
+            "title":"이렇게 좋아해 본 적이 없어요",
+            "artist":"CHEEZE(치즈)",
+            "album":"이렇게 좋아해 본 적이 없어요",
+            "gerne":"Balad",
+            "albumart":"img/album_art/cheeze.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"84",
+            "title":"How You Like That",
+            "artist":"BLACKPINK",
+            "album":"How You Like That",
+            "gerne":"Dance",
+            "albumart":"img/album_art/blackpink2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"83",
+            "title":"이렇게 좋아해 본 적이 없어요",
+            "artist":"CHEEZE(치즈)",
+            "album":"이렇게 좋아해 본 적이 없어요",
+            "gerne":"Balad",
+            "albumart":"img/album_art/cheeze.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"84",
+            "title":"나는 너 좋아",
+            "artist":"장범준",
+            "album":"슬기로운 의사생활 시즌2",
+            "gerne":"Balad",
+            "albumart":"img/album_art/jangbumjun1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"85",
+            "title":"허리춤",
+            "artist":"오반(OVAN)",
+            "album":"허리춤",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/ovan1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"86",
+            "title":"한여름밤의 꿀 : 다시 여름",
+            "artist":"San E, 레이나",
+            "album":"한여름밤의 꿀 : 다시 여름",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/sane1.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"87",
+            "title":"Loving You Girl(Feat.Hkeem)",
+            "artist":"peder Elias",
+            "album":"Loving You Girl(Feat.Hkeem)",
+            "gerne":"Pop",
+            "albumart":"img/album_art/peder.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"88",
+            "title":"Sugar",
+            "artist":"Maroon5",
+            "album":"V(Deluxe Edition)",
+            "gerne":"Pop",
+            "albumart":"img/album_art/maroon51.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"89",
+            "title":"I'm Not The Only One",
+            "artist":"Sam Smith",
+            "album":"In The Lonely Hour",
+            "gerne":"Pop",
+            "albumart":"img/album_art/sam.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"90",
+            "title":"눈누난나(NUNU NANA)",
+            "artist":"제시(Jessi)",
+            "album":"NUNA",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/jessi.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"91",
+            "title":"시차(We Are)(Feat.로꼬 & Gray)",
+            "artist":"우원재",
+            "album":"시차(We Are)",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/woo.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"92",
+            "title":"비밀의 화원",
+            "artist":"아이유",
+            "album":"꽃갈피 둘",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu9.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"93",
+            "title":"하루 끝",
+            "artist":"아이유",
+            "album":"스무 살의 봄",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu10.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"94",
+            "title":"우리 왜 헤어져야 해",
+            "artist":"신예영",
+            "album":"우리 왜 헤어져야 해",
+            "gerne":"Balad",
+            "albumart":"img/album_art/sin.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"95",
+            "title":"우린 어쩌다 헤어진 걸까",
+            "artist":"허각",
+            "album":"Hello",
+            "gerne":"Balad",
+            "albumart":"img/album_art/huh.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"96",
+            "title":"힘든 건 사랑이 아니다",
+            "artist":"임창정",
+            "album":"힘든 건 사랑이 아니다",
+            "gerne":"Balad",
+            "albumart":"img/album_art/lim.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"97",
+            "title":"밤이 되니까",
+            "artist":"원슈타인",
+            "album":"밤이 되니까",
+            "gerne":"Hiphop",
+            "albumart":"img/album_art/one.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"98",
+            "title":"그냥 안아달란 말야",
+            "artist":"다비치",
+            "album":"그냥 안아달란 말야",
+            "gerne":"Balad",
+            "albumart":"img/album_art/davichi.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"99",
+            "title":"추적이는 여름 비가 되어",
+            "artist":"장범준",
+            "album":"장범준 싱글",
+            "gerne":"Balad",
+            "albumart":"img/album_art/jangbumjun2.jpg",
+            "song":"null"
+        },
+        {
+            "rank":"100",
+            "title":"너랑 나",
+            "artist":"아이유",
+            "album":"Last Fantasy",
+            "gerne":"Balad",
+            "albumart":"img/album_art/iu11.jpg",
+            "song":"null"
         }
     ]
 }

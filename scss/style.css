@@ -178,8 +178,25 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #BEBDBD;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #707070;
+}
+
 body {
-  font-family: 'noto sans cjk kr','poppins',sans-serif;
+  font-family: 'noto sans kr','poppins',sans-serif;
   font-size: 14px;
   color: #707070;
   overflow: hidden;
@@ -729,7 +746,7 @@ aside .now_playing .player .status_bar div {
 }
 
 #wrap_home section.visual .sub_visual li .sub_visual_text p {
-  font-family: "noto sans cjk kr";
+  font-family: "noto sans kr";
   font-size: 24px;
   color: #eee;
 }
@@ -979,7 +996,7 @@ aside .now_playing .player .status_bar div {
 }
 
 #wrap_home section.artist .artist_text h3 {
-  font-family: "noto sans cjk kr";
+  font-family: "noto sans kr";
   font-size: 30px;
   font-weight: bold;
 }
@@ -1256,7 +1273,7 @@ aside .now_playing .player .status_bar div {
 }
 
 #wrap_home section.magazine .magazine_text .magazine_index li h3 {
-  font-family: 'noto sans cjk kr';
+  font-family: 'noto sans kr';
   font-weight: bold;
   margin-bottom: 40px;
 }
@@ -1411,7 +1428,7 @@ aside .now_playing .player .status_bar div {
   font-size: 40px;
   font-weight: bold;
   line-height: 50px;
-  height: 130px;
+  height: 150px;
   width: 100%;
   color: #3d3d3d;
   text-overflow: ellipsis;
@@ -1424,9 +1441,12 @@ aside .now_playing .player .status_bar div {
 }
 
 #wrap_chart .chart .chart_main .no1 .no1_artist {
-  padding-top: 24px;
+  padding-top: 20px;
   font-weight: bold;
   font-size: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #wrap_chart .chart .chart_main .no1 .no1_box {
@@ -1523,7 +1543,7 @@ aside .now_playing .player .status_bar div {
   height: 50px;
   background: #f5f5f5;
   color: #3d3d3d;
-  font-family: 'noto sans cjk kr';
+  font-family: 'noto sans kr';
   border-radius: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1608,16 +1628,25 @@ aside .now_playing .player .status_bar div {
   font-weight: bold;
   width: 278px;
   margin-right: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #wrap_chart .chart .chart_main .chart_list .chart_list_list .chart_lists > ul .chart_artist {
   width: 120px;
   margin-right: 70px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #wrap_chart .chart .chart_main .chart_list .chart_list_list .chart_lists > ul .chart_album {
   width: 260px;
   margin-right: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #wrap_chart .chart .play_icon {
