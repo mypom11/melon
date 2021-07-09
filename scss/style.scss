@@ -275,8 +275,8 @@ aside{
   .now_playing{
     @include position($l:0, $b:0);
     @include size(100%, 400px);
+    @include flex(center, center,column);
     background-size: cover;
-    @include flex($a:center, $d:column);
     padding: 20px 25px;
     .player_bg{
       @include size;
@@ -288,9 +288,10 @@ aside{
     }
     .player{
       @include position($p:relative);
+      text-align: center;
       z-index: 2;
       h5{
-        @include font(18px,bold,#fff);
+        @include font(18px, bold, #fff);
         margin-bottom: 17px;
       }
       .album_art{
