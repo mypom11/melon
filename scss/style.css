@@ -2314,6 +2314,7 @@ aside .now_playing .player .status_bar div {
 }
 
 #wrap_musicvideo .musicvideo .popular_video .popular_video_list .videos .snapshot {
+  cursor: pointer;
   position: relative;
   width: 100%;
   height: 120px;

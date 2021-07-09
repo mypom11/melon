@@ -51,19 +51,35 @@ for(let i = 0; i < nav.length; i++){
                 item.style.zIndex = '5'
                 item.classList.remove('on')
             })
+            main_video_stop()
             menu_Bg(0)
             classOn(nav,nav[0])
         }else{
             subMenus[i].classList.add('on')
-            podcastOn()
-            subMenus.forEach(function(item){
-                item.style.zIndex = '5'
-            })
-            subMenus[i].style.zIndex='6'
-            menu_Bg(i)
-            setTimeout(function(){
-            classOn(subMenus,subMenus[i])
-            },1000)
+            if(subMenus[i] == subMenus[4]){
+                main_video_play()
+                subMenus.forEach(function(item){
+                    item.style.zIndex = '5'
+                })
+                subMenus[i].style.zIndex='6'
+                menu_Bg(i)
+                setTimeout(function(){
+                classOn(subMenus,subMenus[i])
+                },1000)
+                console.log('play')
+            }else{
+                main_video_stop()
+                podcastOn()
+                subMenus.forEach(function(item){
+                    item.style.zIndex = '5'
+                })
+                subMenus[i].style.zIndex='6'
+                menu_Bg(i)
+                setTimeout(function(){
+                classOn(subMenus,subMenus[i])
+                },1000)
+                console.log('stop')
+            }
         }
     })
 }
@@ -177,6 +193,7 @@ nav[0].addEventListener('click',function(){
 function toggle_status(index){
     if(index == 0){
         document.querySelector('.top').style.display='none'
+        document.querySelector('.bottom').style.display='block'
     }else{
         document.querySelector('.top').style.display='block'
         document.querySelector('.bottom').style.display='block'
@@ -601,15 +618,18 @@ trendSongBtn.forEach(function(item){
     item.addEventListener('click',function(event){   
         let direction = event.target.getAttribute('class')
         if( direction == 'left'){
-            if(trendSongCurrent < trendSonglength - 8)
+            if(trendSongCurrent < trendSonglength - 8){
                 trendSongs.style.transition = '1s'
                 trendSongCurrent++
                 trendSongSlide(trendSongCurrent)
+            }     
         }else{
-            if(trendSongCurrent > 0)
-            trendSongs.style.transition = '1s'
-            trendSongCurrent--
-            trendSongSlide(trendSongCurrent)
+            if(trendSongCurrent > 0){
+                trendSongs.style.transition = '1s'
+                trendSongCurrent--
+                trendSongSlide(trendSongCurrent)
+            }
+            
         }   
     })
 })
@@ -726,30 +746,51 @@ let videos = document.querySelectorAll('.videos')
 videos.forEach(function(item){
     item.addEventListener('mouseenter',function(event){
         event.target.children[0].children[0].play()
-        event.target.children[0].children[0].setAttribute('muted', false)
         event.target.children[0].children[1].style.display='none'
-        if(main_music == true){
-            audiostop()
-        }
-        if(main_video == true){
-            main_video_mute()
-        }
     })
     item.addEventListener('mouseleave',function(event){
         event.target.children[0].children[0].pause()
         event.target.children[0].children[1].style.display='block'
-        event.target.children[0].children[0].setAttribute('muted', true)
-        if(main_video == true){
-            main_video_muteX()
-        }
-        if(main_music == true){
-            audioPlay()
-        }
-        
+    })
+    item.addEventListener('click',function(event){
+        let mainVideo = document.querySelector('.main_video')
+        let videoUrl = event.target.getAttribute('src')
+        let videoKey = event.target.getAttribute('data-key')
+        let mainKey = document.querySelector('.main_video').getAttribute('data-key')
+        let subText = event.path[2].children[1]
+        let mainText = document.querySelector('.musicvideo_text')
+        console.log(mainKey)
+        event.target.setAttribute('src', mainVideo.getAttribute('src'));
+        mainVideo.setAttribute('src', videoUrl)
+        event.target.setAttribute('data-key', mainKey);
+        mainVideo.setAttribute('data-key', videoKey);
+        console.log(mainKey)
+        loadSongs().then((songs) => {
+            let result = songs.find(song => song.title === videoKey)
+            let result2 = songs.find(song => song.title === mainKey)
+            createMainDisplay(mainText, result)
+            createSubDisplay(subText, result2)
+        })  
     })
 })
 
-
+function createSubDisplay(index, song){
+    index.innerHTML = createSubText(song)
+}
+function createSubText(song){
+    return` <h6>${song.title}</h6>
+            <p>${song.artist}</p>`
+}
+function createMainDisplay(index, song){
+    index.innerHTML = createMainText(song)
+    let mainArt = document.querySelector('.musicvideo_albumart img')
+        mainArt.setAttribute('src', song.albumart)
+}
+function createMainText(song){
+    return` <h2>${song.title}</h2>
+    <p>${song.artist}</p>
+    <p>${song.album}</p>`
+}
 //dj 페이지
 let djList = document.querySelectorAll('.dj_lists')
 
