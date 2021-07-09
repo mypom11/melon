@@ -139,6 +139,7 @@ function audioPlay(){
     stop_btn = document.querySelector('.stop_btn');
     audio.play()
     audio.volume = 0.6
+    audio.loop = true
     play_btn.style.display = 'none'
     stop_btn.style.display = 'block'
     main_music = true;
