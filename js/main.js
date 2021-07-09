@@ -66,7 +66,6 @@ for(let i = 0; i < nav.length; i++){
                 setTimeout(function(){
                 classOn(subMenus,subMenus[i])
                 },1000)
-                console.log('play')
             }else{
                 main_video_stop()
                 podcastOn()
@@ -78,7 +77,6 @@ for(let i = 0; i < nav.length; i++){
                 setTimeout(function(){
                 classOn(subMenus,subMenus[i])
                 },1000)
-                console.log('stop')
             }
         }
     })
@@ -420,7 +418,6 @@ function chartBig(songs){
         loadSongs().then((songs) => {
             let no1 = document.querySelector('.no1')
             let bigChart = event.target.dataset.rank
-            console.log(event.target)
             let choose = songs.find(song => song.rank == bigChart)
             no1.innerHTML = createNo1(choose)
             let no1Title = document.querySelector('.no1_title_text')
@@ -760,12 +757,10 @@ videos.forEach(function(item){
         let mainKey = document.querySelector('.main_video').getAttribute('data-key')
         let subText = event.path[2].children[1]
         let mainText = document.querySelector('.musicvideo_text')
-        console.log(mainKey)
         event.target.setAttribute('src', mainVideo.getAttribute('src'));
         mainVideo.setAttribute('src', videoUrl)
         event.target.setAttribute('data-key', mainKey);
         mainVideo.setAttribute('data-key', videoKey);
-        console.log(mainKey)
         loadSongs().then((songs) => {
             let result = songs.find(song => song.title === videoKey)
             let result2 = songs.find(song => song.title === mainKey)

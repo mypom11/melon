@@ -155,6 +155,17 @@ body{
       left: 240px;
     }
   }
+  .sub_main{
+    padding: 100px 80px 80px;
+    @include size(1680px);
+    position: relative;
+  }
+  .sub_menu_title{
+    margin-bottom: 20px;
+    p{
+      color: #c7c7c7;
+    }
+  }
   .sub_title{
     @include font(28px, bold, $main_color, "poppins");
   }
@@ -497,8 +508,8 @@ aside{
         }
       }
       .album_slide{
-        @include size(760px, 480px);
-        @include position(50%, 900px);
+        @include size(780px, 480px);
+        @include position(50%, $r:0);
         transform: translateY(-50%);
         overflow: hidden;
         z-index: 2;
@@ -778,14 +789,14 @@ aside{
     }
     .chart_main{
       @include position(40px, $p:relative);
-      @include size(100%,650px);
+      @include size(100%,600px);
       img{
         @include size;
       }
       .no1{
         @include size(300px);
         .no1_art{
-          @include size(300px, 300px);
+          @include size(250px, 250px);
           border-radius: 20px;
           overflow: hidden;
           box-shadow: -20px 20px 20px rgba(0,0,0,0.4);
@@ -803,7 +814,6 @@ aside{
         .no1_artist{
           @include font(20px, bold);
           @include text;
-          padding-top: 20px;
         }
         .no1_box{
           margin-top: 36px;
@@ -856,7 +866,6 @@ aside{
         .chart_list_list{
           @include size;
           overflow-y: scroll;
-          
           .chart_lists{
             @include size(100%, 50px);
             @include flex($j:null);
@@ -943,13 +952,9 @@ aside{
 #wrap_trend{
   z-index: 2;
   .trend{
-    padding: 100px 80px;
-    width: 1680px;
     .toggle_btn{
       @include size(120px, 30px);
-      @include flex($a:null);
-      position: absolute;
-      
+      @include flex($a:null);     
       .left{
         @include size(18px,30px);
         @include arrow(left);
@@ -959,25 +964,20 @@ aside{
         @include arrow(right);
       }
     }
-    .trend_title{
-      p{
-        color: #c7c7c7;
-      }
-    }
     .trend_main{
-      @include position(0, 0, relative);
-      width: 100%;
+      @include position(0, 10%, relative);
+      @include size(80%, 420px);
       .toggle_btn{
         @include position(0, 50%);
         transform: translateX(-50%);
       }
       .trend_slide{
-        @include position(40px, 0);
-        @include size(100%, 400px);
+        @include position(50px, 0);
+        @include size(100%, 300px);
         .trend_imgs{
           li{
             @include position(50%, null);
-            @include size(700px, 400px);
+            @include size(600px, 100%);
             transition: 1s;
             transform: translate(0,-50%) scale(0.8);
             &.trend_0{
@@ -995,7 +995,7 @@ aside{
             &.trend_1{
               filter: blur(4px);
               z-index: 0;
-              left: -70px;
+              left: 0;
               .trend_play_btn{
                 display: none;
               }
@@ -1008,7 +1008,7 @@ aside{
             &.trend_2{
               filter: blur(4px);
               z-index: 0;
-              left: 870px;
+              left: 630px;
               .trend_play_btn{
                 display: none;
               }
@@ -1037,15 +1037,13 @@ aside{
       }
     }
     .trend_songs{
-      @include position(480px, 0, relative);
-      width: 100%;
       .trend_songs_title{
-        position: relative;
+        width: 1500px;
+        @include flex;
         h3{
           @include font(30px, bold, $black_color_second);
         }
         .toggle_btn{
-          @include position(10px, $r:0, $p:null);
           width: 80px;
         }
       }
@@ -1159,11 +1157,6 @@ aside{
           }
         }
       }
-      .podcast_title{
-        p{
-          color: #c7c7c7;
-        }
-      }
       .article{
         @include position($l:800px, $b:-100%);
         .blur{
@@ -1181,7 +1174,6 @@ aside{
         }
       }
       .podcast_main{
-        @include position($l:80px, $b:100px);
         @include size(840px, null);
         z-index: 3;
         .podcast_text{
@@ -1191,7 +1183,7 @@ aside{
             width: 600px;
           }
           p{
-            @include font(18px, normal, $gray_color, 'poppins');
+            @include font(18px, normal, $gray_color);
             margin-top: 20px;
           }
           .play_btn{
@@ -1203,6 +1195,8 @@ aside{
         }
         .recently{
           width: 100%;
+          position: relative;
+          z-index: 3;
           .recently_title{  
             @include flex($a:null);
             margin-top: 110px;
@@ -1233,23 +1227,26 @@ aside{
 #wrap_musicvideo{
   z-index: 2;
   .musicvideo{
-    position: relative;
-    padding: 100px 80px;
-    width: 1680px;
-    .musicvideo_title{
-      position: relative;
-      z-index: 1;
-      p{
-        color: #c7c7c7;
-      }
+    .sub_menu_title{
+      @include position($p:relative);
+      z-index: 2;
     }
     .musicvideo_main{
-      @include position(0, 0);
-      @include size(100%, 650px);
+      @include size(100%, 400px);
       background: #fff;
       z-index: 0;
       .video_play{
-        @include size;
+        $video_size: 550px;
+        @include size(100%, $video_size);
+        @include position(0, 0);
+        &:hover {
+          .black_bg{
+            opacity: 1;
+          }
+          .mouseover{
+          opacity: 0.8;
+          }
+        }
         video{
           @include size;
           object-fit: cover;
@@ -1278,19 +1275,11 @@ aside{
         }
         .black_bg{
           opacity: 0;
-          height: 640px;
-        }
-        &:hover {
-          .black_bg{
-            opacity: 1;
-          }
-          .mouseover{
-          opacity: 0.8;
-          }
+          height: $video_size - 10px;
         }
         .musicvideo_albumart{
           @include size(200px, 200px);
-          @include position(240px, 80px);
+          @include position(220px, 80px);
           opacity: 0;
           transition: 1s;
           img{
@@ -1298,7 +1287,7 @@ aside{
           }
         }
         .musicvideo_text{
-          @include position(240px, 340px);
+          @include position(220px, 340px);
           opacity: 0;
           transition: 1s;
           h2{
@@ -1324,7 +1313,7 @@ aside{
       } 
     }
     .popular_video{
-      @include position(670px, 80px);
+      margin-top: 40px;
       .popular_video_title{
         @include flex;
         width: 320px;
@@ -1365,7 +1354,7 @@ aside{
               z-index: 2;
             }
             video{
-              @include size(200px, 120px);
+              @include size;
               object-fit: cover;
             }
             .black_bg{
@@ -1394,15 +1383,8 @@ aside{
 #wrap_melondj{
   z-index: 2;
   .dj{
-    padding: 100px 80px;
-    width: 1680px;
-    .dj_title{
-      p{
-        color: #c7c7c7;
-      }
-    }
     .dj_main{
-      @include size(100%, 500px);
+      @include size(100%, 450px);
       .dj_main_ul{
         margin-top: 30px;
         display: flex;
@@ -1488,7 +1470,7 @@ aside{
                 }
               }
               ul{
-                @include position(0, 0);
+                @include position($b:0, $r:0);
               }
             }
           }
@@ -1496,7 +1478,7 @@ aside{
       }
     }
     .popular_dj{
-      margin-top: 60px;
+      margin-top: 50px;
       .popular_dj_title{
         h5{
           @include font(24px, bold, $black_color_second);
