@@ -16,6 +16,20 @@
 </head>
 <body>
   <header>
+    <div class="small_nav">
+      <div class="small_nav_wrap">
+        <h1>logo</h1>
+        <div class="small_menu_bg"></div>
+        <ul class="small_menu">
+          <li data-nav = "0" class="on"><span></span>HOME</li>
+          <li data-nav = "1" ><span></span>TOP100</li>
+          <li data-nav = "2" ><span></span>TREND</li>
+          <li data-nav = "3" ><span></span>PODCAST</li>
+          <li data-nav = "4" ><span></span>MUSIC VIDEO</li>
+          <li data-nav = "5" ><span></span>멜론DJ</li>
+        </ul>
+      </div>
+    </div>
     <div class="search_bar">
       <input type="text" placeholder="검색어를 입력하세요">
       <div class="search_icon"></div>
@@ -25,6 +39,38 @@
       <div class="profile"></div>
     </div>
   </header>
+  <article class="small_now_playing">
+      <div class="player">
+        <ul>
+          <li class="small_player">
+            <div class="album_art"><img src="img/album_art/iu.jpg" alt=""></div>
+            <div class="now_playing_text">
+              <p class="song_title">라일락(Lilac)</p>
+              <p class="song_artist">아이유(IU)</p>
+            </div>
+          </li>
+          <li>
+            <div class="play_btn">
+              <div class="prev_btn"><img src="img/icons/btn_prev.png"></div>
+              <div class="start_btn"><img src="img/icons/btn_play.png"></div>
+              <div class="stop_btn"><img src="img/icons/btn_stop.png"></div>
+              <div class="next_btn"><img src="img/icons/btn_next.png"></div>
+            </div>
+            <div class="status_bar">
+              <div></div>
+            </div>
+          </li>
+          <li>
+            <div class="sub">
+              <span><img src="img/icons/icon_7.png" alt=""></span>
+              <span><img src="img/icons/icon_8.png" alt=""></span>
+              <span><img src="img/icons/icon_9.png" alt=""></span>
+            </div>
+            <div class="profile"><img src="img/profile.png" alt=""></div>
+          </li>
+        </ul>
+      </div>
+  </article>
   <aside>
     <div class="menu">
       <h1>logo</h1>
@@ -63,7 +109,7 @@
       </div>
     </div>
   </aside>
-  <div id="wrap_home" class="sub_menu">
+  <div id="wrap_home" class="sub_menu on">
     <div class="page_toggle">
     <span class="top"></span>
     <span class="bottom"></span>

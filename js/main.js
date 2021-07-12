@@ -13,6 +13,7 @@ loadSongs().then((songs) => {
 })
 
 let nav = document.querySelectorAll('.main_menu li')
+let small_nav = document.querySelectorAll('.small_menu li')
 let menu_bg = document.querySelector('.menu_bg')
 let main_music;
 let main_video;
@@ -34,7 +35,7 @@ function sub_top(index){
     }    
 }
 function menu_Bg(num){
-    menu_bg.style.top = (num * 31) + 74 + (num * 3) +'px'
+    menu_bg.style.top = (num * 1.9375) + 4.625 + (num * 0.1875) +'rem'
 }
 function classOn(targetGroup,target){
     targetGroup.forEach(function(item){
@@ -42,46 +43,57 @@ function classOn(targetGroup,target){
     })
     target.classList.add('on')
 }
-
-for(let i = 0; i < nav.length; i++){
-    nav[i].addEventListener('click',function(){
-        classOn(nav,nav[i])
-        if(subMenus[i].getAttribute('class') == 'sub_menu on'){
-            subMenus.forEach(function(item){
-                item.style.zIndex = '5'
-                item.classList.remove('on')
-            })
-            main_video_stop()
-            menu_Bg(0)
-            classOn(nav,nav[0])
-        }else{
-            subMenus[i].classList.add('on')
-            if(subMenus[i] == subMenus[4]){
-                main_video_play()
+subMenuClicker(nav);
+subMenuClicker(small_nav);
+function subMenuClicker(nav){
+    for(let i = 0; i < nav.length; i++){
+        nav[i].addEventListener('click',function(){
+            classOn(nav,nav[i])
+            if(subMenus[i].getAttribute('class') == 'sub_menu on'){
                 subMenus.forEach(function(item){
                     item.style.zIndex = '5'
+                    item.classList.remove('on')
                 })
-                subMenus[i].style.zIndex='6'
-                menu_Bg(i)
-                setTimeout(function(){
-                classOn(subMenus,subMenus[i])
-                },1000)
-            }else{
                 main_video_stop()
-                podcastOn()
-                subMenus.forEach(function(item){
-                    item.style.zIndex = '5'
-                })
-                subMenus[i].style.zIndex='6'
-                menu_Bg(i)
-                setTimeout(function(){
-                classOn(subMenus,subMenus[i])
-                },1000)
+                menu_Bg(0)
+                classOn(nav,nav[0])
+            }else{
+                subMenus[i].classList.add('on')
+                if(subMenus[i] == subMenus[4]){
+                    main_video_play()
+                    subMenus.forEach(function(item){
+                        item.style.zIndex = '5'
+                    })
+                    subMenus[i].style.zIndex='6'
+                    menu_Bg(i)
+                    setTimeout(function(){
+                    classOn(subMenus,subMenus[i])
+                    },1000)
+                }else{
+                    main_video_stop()
+                    podcastOn()
+                    subMenus.forEach(function(item){
+                        item.style.zIndex = '5'
+                    })
+                    subMenus[i].style.zIndex='6'
+                    menu_Bg(i)
+                    setTimeout(function(){
+                    classOn(subMenus,subMenus[i])
+                    },1000)
+                }
             }
-        }
-    })
+        })
+    }
 }
-
+let small_nav_wrap = document.querySelector('.small_nav_wrap');
+small_nav_wrap.addEventListener('mouseenter',function(){
+    setTimeout(function(){
+        small_nav_wrap.children[2].style.display="flex";
+    },800)
+})
+small_nav_wrap.addEventListener('mouseleave',function(){
+    small_nav_wrap.children[2].style.display="none";
+})
 
 //검색창 포커스 이벤트
 document.querySelector('.search_bar input').addEventListener('focus',function(){
@@ -181,7 +193,13 @@ toggle.addEventListener('click',function(event){
     }
 })
 //home 눌렀을 경우
-
+small_nav[0].addEventListener('click', function(){
+    current_section = 0;
+    current_magazine = 0;
+    moveSection(current_section);
+    toggle_status(current_section)
+    sub_top(current_section)
+})
 nav[0].addEventListener('click',function(){
     current_section = 0;
     current_magazine = 0;
@@ -234,11 +252,11 @@ let albums = document.querySelectorAll('.new_albums li');
 let album_btn = document.querySelector('.toggle_btn');
 let albumArtSlide = document.querySelector('.album_slide ul');
 let albumArts = document.querySelectorAll('.album_slide li')
-albumArtSlide.style.width = (albums.length) * 480 +'px';
+albumArtSlide.style.width = (albums.length) * 30 +'rem';
 let current_album = 0;
 //버튼 누를시 배경 슬라이드
 function moveSlide(index){
-    albumArtSlide.style.left = `${(index * -390)-(index*90)}px`;
+    albumArtSlide.style.left = `${(index * -24.375)-(index*5.625)}rem`;
     setTimeout(function(){
         albumArts.forEach(function(item){
             item.classList.replace('on','off')
@@ -266,12 +284,14 @@ album_btn.addEventListener('click',function(event){
 
 let nowPlayingChange = document.querySelectorAll('.album_play')
 let nowPlaying = document.querySelector('.now_playing')
+let smallPlaying = document.querySelector('.small_player')
 nowPlayingChange.forEach(function(item){
     item.addEventListener('click',function(event){
         loadSongs().then((songs) => {
             let albumSong = event.path[1].dataset.album;
             let result = songs.find(song => song.title === albumSong)
             nowPlaying.innerHTML = nowPlayingDisplay(result)
+            smallPlaying.innerHTML = smallPlayingDisplay(result)
             albumArtChange(result)
             AudioChange(result)
         })  
@@ -307,8 +327,14 @@ function nowPlayingDisplay(item){
                 <div class="status_bar">
                     <div></div>
                 </div>
-            </div>`
-                
+            </div>`               
+}
+function smallPlayingDisplay(item){
+    return `<div class="album_art"><img src="${item.albumart}" alt=""></div>
+    <div class="now_playing_text">
+      <p class="song_title">${item.title}</p>
+      <p class="song_artist">${item.artist}</p>
+    </div>`
 }
 
 
@@ -422,7 +448,7 @@ function chartBig(songs){
             no1.innerHTML = createNo1(choose)
             let no1Title = document.querySelector('.no1_title_text')
             if(no1Title.innerHTML.length > 14){
-                no1Title.style.fontSize = '30px'
+                no1Title.style.fontSize = '1.875rem'
             }
             dateCreate()
         }) 
@@ -590,7 +616,7 @@ function dataDisplay(songs){
     let filterd = songs.filter(song => song.gerne == gerne)
     displayTrendList(filterd)
     trendSonglength = filterd.length
-    trendSongs.style.width = trendSonglength * 180 + 'px'
+    trendSongs.style.width = trendSonglength * 11.25 + 'rem'
 }
 function createTrendList(song){
     return`<li>
@@ -609,7 +635,7 @@ function createTrendList(song){
 
 let trendSongCurrent = 0;
 function trendSongSlide(index){
-    trendSongs.style.left = -(180 * index) + 'px' 
+    trendSongs.style.left = -(11.25 * index) + 'rem' 
 }
 
 trendSongBtn.forEach(function(item){
@@ -655,7 +681,7 @@ podcastToggle.forEach(function(item){
     })
 })
 function slidePodcast(index){
-    podcastPage.style.left = (index * 1680) + 'px'
+    podcastPage.style.left = (index * 105) + 'rem'
     podcastCurrent = index
 }
 let pororo = document.querySelectorAll('.podcast02 .contents li')
