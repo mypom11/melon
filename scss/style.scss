@@ -738,8 +738,11 @@ aside{
       }
       .album_slide{
         @include size(48.75rem, 30rem);
-        @include position(45%, $r:0);
+        @include position(50%, $r:0);
         transform: translateY(-50%);
+        @include small_window{
+          @include position(45%);
+        }
         overflow: hidden;
         z-index: 2;
         ul{
