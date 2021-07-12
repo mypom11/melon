@@ -6,7 +6,15 @@ $white_color_second:#EEEEEE;
 $black_color_second:#3d3d3d;
 $main_gradient: linear-gradient(180deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 100%);
 $main_gradient2: linear-gradient(90deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 100%);
-@mixin font($s:14px, $w:normal, $c:null, $f:null){
+$size12: 0.75rem;
+$size14: 0.875rem;
+$size18: 1.125rem;
+$size20: 1.25rem;
+$size24: 1.5rem;
+$size30: 1.875rem;
+$aside_width: 15rem;
+$sub_width: 105rem;
+@mixin font($s: $size14, $w:normal, $c:null, $f:null){
   font-size: $s;
   font-weight: $w;
   font-family: $f;
@@ -83,55 +91,55 @@ $main_gradient2: linear-gradient(90deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 1
 }
 @keyframes toggle_move_top{
   0%{
-    top: 16px;
+    top: 1rem;
   }
   50%{
-    top: 30px;
+    top: $size30;
   }
   100%{
-    top: 16px;
+    top: 1rem;
   }
 }
 @keyframes toggle_move_bottom{
   0%{
-    bottom: 16px;
+    bottom: 1rem;
   }
   50%{
-    bottom: 30px;
+    bottom: $size30;
   }
   100%{
-    bottom: 16px;
+    bottom: 1rem;
   }
 }
 @keyframes toggle_move_left{
   0%{
-    left: 30px;
+    left: $size30;
   }
   50%{
-    left: 20px;
+    left: $size20;
   }
   100%{
-    left: 30px;
+    left: $size30;
   }
 }
 @keyframes toggle_move_right{
   0%{
-    right: 290px;
+    right: 18.13rem;
   }
   50%{
-    right: 280px;
+    right: 17.5rem;
   }
   100%{
-    right: 290px;
+    right: 18.13rem;
   }
 }
 ::-webkit-scrollbar{
-  width: 10px;
+  width: 0.625rem;
   &-track{
     background-color: transparent;
   }
   &-thumb{
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     background-color: #BEBDBD;
     &:hover{
       background-color: $black_color;
@@ -140,11 +148,9 @@ $main_gradient2: linear-gradient(90deg, rgba(0,214,59,1) 0%, rgba(0,238,255,1) 1
 }
 body{
   font-family: 'noto sans kr','poppins',sans-serif;
-  font-size: 14px;
+  @include font($size14);
   color: $black_color;
   overflow: hidden;
-  max-width: 1920px;
-  min-width: 1920px;
   .sub_menu{
     @include size;
     @include position(0, 100%);
@@ -152,22 +158,22 @@ body{
     transition: 1s;
     z-index: 5;
     &.on{
-      left: 240px;
+      left: $aside_width;
     }
   }
   .sub_main{
-    padding: 100px 80px 80px;
-    @include size(1680px);
+    padding: 6.25rem 5rem 5rem;
+    @include size(105rem);
     position: relative;
   }
   .sub_menu_title{
-    margin-bottom: 20px;
+    margin-bottom: $size20;
     p{
       color: #c7c7c7;
     }
   }
   .sub_title{
-    @include font(28px, bold, $main_color, "poppins");
+    @include font(1.75rem, bold, $main_color, "poppins");
   }
   .black_bg{
     display: block;
@@ -178,16 +184,16 @@ body{
   }
 }
 header{
-  @include size(1520px, 50px);
-  @include position(40px, 320px, fixed);
+  @include size(95rem, 3.125rem);
+  @include position(2.5rem, 20rem, fixed);
   @include flex;
   z-index: 10;
   .search_bar{
-    @include size(593px, 35px);
+    @include size(37.06rem, 2.188rem);
     @include position($p:relative);
-    border-radius: 20px;
+    border-radius: $size20;
     background: $white_color_second;
-    padding: 6px 20px;
+    padding: 0.375rem $size20;
     opacity: 0.3;
     input{
       background: none;
@@ -195,20 +201,20 @@ header{
       color: $black_color_second;
     }
     .search_icon{
-      @include size(20px, 20px);
-      @include position($r:17px, $t:8px);
+      @include size($size20, $size20);
+      @include position($r:1.063rem, $t:0.5rem);
       @include background("icons/search.png");
     }
   }
   .alarm_menu{
     @include flex($j: null);
     .alert{
-      @include size(30px, 30px);
+      @include size($size30, $size30);
       @include background('icons/alarm.png');
-      margin-right: 15px;
+      margin-right: 0.9375rem;
     }
     .profile{
-      @include size(50px, 50px);
+      @include size(3.125rem, 3.125rem);
       @include background('profile.png');
       border-radius: 50%;
     }
@@ -216,44 +222,44 @@ header{
 }
 aside{
   @include position($p:fixed);
-  @include size(240px, 100vh);
+  @include size($aside_width, 100vh);
   background: #eee;
   .menu{
-    padding: 30px 40px;
+    padding: $size30 2.5rem;
     @include position($p:relative);
     .menu_bg{
-      @include size(180px, 36px);
-      @include position(74px, 20px);
-      border-radius: 12px;
+      @include size(11.25rem, 2.25rem);
+      @include position(4.625rem, $size20);
+      border-radius: $size12;
       background: #4be274;
       transition: 0.5s;
     }
     h1{
-      margin-bottom: 35px;
-      height: 20px;
-      font-size: 0;
+      margin-bottom: 2.188rem;
+      height: $size20;
+      @include font(0);
       @include background('logo.png', left, contain);
     }
     img{
-      @include size(20px, 20px);
-      margin-right: 10px;
+      @include size($size20, $size20);
+      margin-right: 0.625rem;
       vertical-align: middle;
     }
     .main_menu{
       li{
         position: relative;
-        line-height: 12px;
-        font-size: 12px;
+        line-height: $size12;
+        @include font($size12);
         z-index: 1;
         transition: 0.5s;
-        margin-bottom: 22px;
-        padding-left: 30px;
+        margin-bottom: 1.375rem;
+        padding-left: $size30;
         cursor: pointer;
         span{
           content: "";
           display: block;
-          @include size(20px, 20px);
-          @include position(0, -4px);
+          @include size($size20, $size20);
+          @include position(0, -0.25rem);
           background: black;
         }
         &.on{
@@ -275,72 +281,72 @@ aside{
       }
     } 
     .my_menu{
-      @include font(14px, bold);
-      margin-top: 40px;
+      @include font($size14, bold);
+      margin-top: 2.5rem;
       li{
-        @include font(12px);
-        margin-top: 24px;
+        @include font($size12);
+        margin-top: $size24;
       }
     }
   }
   .now_playing{
     @include position($l:0, $b:0);
-    @include size(100%, 400px);
+    @include size(100%, 25rem);
     @include flex(center, center,column);
     background-size: cover;
-    padding: 20px 25px;
+    padding: $size20 1.563rem;
     .player_bg{
       @include size;
       @include position(0, 0);
       @include background('album_art/iu.jpg');
       display: block;
       content: "";
-      filter: blur(20px);
+      filter: blur($size20);
     }
     .player{
       @include position($p:relative);
       text-align: center;
       z-index: 2;
       h5{
-        @include font(18px, bold, #fff);
-        margin-bottom: 17px;
+        @include font($size18, bold, #fff);
+        margin-bottom: 1.063rem;
       }
       .album_art{
-        @include size(180px, 180px);
-        border-radius: 20px;
-        margin-bottom: 10px;
+        @include size(11.25rem, 11.25rem);
+        border-radius: $size20;
+        margin-bottom: 0.625rem;
         overflow: hidden;
         img{
           @include size;
         }
       }
       .song_title{
-        @include font(18px, bold, $black_color_second);
+        @include font($size18, bold, $black_color_second);
       }
       .song_artist, .song_album{
-        @include font(12px);
+        @include font($size12);
       }
       .play_btn{
-        @include size(107px, 30px);
+        @include size(6.688rem, $size30);
         @include flex;
-        margin: 15px auto;
+        margin: 0.9375rem auto;
         img{
           width: 100%;
         }
         .start_btn, .stop_btn{
-          @include size(30px, 30px);
+          @include size($size30, $size30);
         }
         .stop_btn{
           display: none;
         }
         .prev_btn, .next_btn{
-          @include size(20px, 20px);
+          @include size($size20, $size20);
         }
       }
         .status_bar{
-        @include size(100%, 8px);
+        @include size(100%, 0.5rem);
         border: 1px solid rgba(0,0,0,0.1);
-        border-radius: 30px;
+        border-radius: $size30;
           div{
             @include size(0, 100%);
             background: $main-color;
@@ -352,32 +358,32 @@ aside{
 }
 
 #wrap_home{ 
-  @include position($p:relative, $l:240px);
-  width: 1680px;
+  @include position($p:relative, $l:$aside_width);
+  width: $sub_width;
   .page_toggle{
     span{
       @include position($p:fixed);
-      @include size(60px, 34px);
+      @include size(3.75rem, 2.125rem);
       display: block;
       z-index: 4;
-      margin-left: 120px;
+      margin-left: 7.5rem;
       &.top{
         @include arrow(top);
-        @include position(16px, 50%, null);
+        @include position(1rem, 50%, null);
         display: none;
         transform: translateX(-50%);
         animation: toggle_move_top 2s infinite;
       }
       &.bottom{
         @include arrow(bottom);
-        @include position($b:16px, $l:50%, $p:null);
+        @include position($b:1rem, $l:50%, $p:null);
         transform: translateX(-50%);
         animation: toggle_move_bottom 2s infinite;
       }
     }
   }
   section{
-    @include size(1680px, 100vh);
+    @include size($sub_width, 100vh);
     @include position($p:relative, $l:0);
     &.visual{
       .visual_group{
@@ -400,31 +406,31 @@ aside{
             opacity: 1;
           }
           .visual_text{
-            @include position(160px, 80px);
+            @include position(13.75rem, 5rem);
             width: 100%;
             h2{
               @include position($l:0);
-              @include font(60px,bold,$white_color);
+              @include font(3.75rem,bold,$white_color);
               overflow: hidden;
-              line-height: 80px;
-              margin-bottom: 20px;
+              line-height: 5rem;
+              margin-bottom: $size20;
             }
             p{
-              @include position(220px, 0);
+              @include position(13.75rem, 0);
               color: $white_color_second;
             }
           }
         }  
       }
       .sub_visual{
-        @include position($l:80px, $b:90px);
-        @include size(1530px, 290px);
+        @include position($l:5rem, $b:5.625rem);
+        @include size(95.63rem, 18.13rem);
         @include flex($d:null);
         overflow: hidden;
         li{
           @include position(0, 0, relative);
-          @include size(470px, 290px);
-          border-radius: 20px;
+          @include size(29.38rem, 18.13rem);
+          border-radius: $size20;
           box-shadow: 0 3px 6px rgba(0,0,0,0.4);
           transition: 1s;
           opacity: 0.8;
@@ -439,17 +445,17 @@ aside{
             transform: scale(1);
           }
           .black_bg{
-            border-radius: 20px;
+            border-radius: $size20;
             background: rgba(0,0,0,0.1);
           }
           .sub_visual_text{
-            @include position($l:0, $b:5px);
-            padding: 20px;
+            @include position($l:0, $b:0.3125rem);
+            padding: $size20;
             h4{
-              @include font(30px, bold, $white_color, "poppins");
+              @include font($size30, bold, $white_color, "poppins");
             }
             p{
-              @include font(24px, null, #eee, "noto sans kr");
+              @include font($size24, null, #eee, "noto sans kr");
             }
           }
           @for $i from 1 to 4{
@@ -484,23 +490,23 @@ aside{
           }
         }
         .new_album_text{
-          @include position(240px, 80px);
+          @include position($aside_width, 5rem);
           opacity: 0.7;
           &:hover{
             opacity: 1;
           }
           h2{
-            @include font(70px, bold, #fff, "poppins");
-            @include position(10px, -4px, relative);
-            line-height: 90px;
+            @include font(4.375rem, bold, #fff, "poppins");
+            @include position(0.625rem, -0.25rem, relative);
+            line-height: 5.625rem;
           }
           p{
-            @include font(24px, bold, $white_color);
+            @include font($size24, bold, $white_color);
           }
           .play_btn{
-            @include size(200px, 60px);
+            @include size(12.5rem, 3.75rem);
             cursor: pointer;
-            margin-top: 80px;
+            margin-top: 5rem;
             img{
               @include size;
             }
@@ -508,7 +514,7 @@ aside{
         }
       }
       .album_slide{
-        @include size(780px, 480px);
+        @include size(48.75rem, 30rem);
         @include position(50%, $r:0);
         transform: translateY(-50%);
         overflow: hidden;
@@ -518,7 +524,7 @@ aside{
           @include flex;
           transition: 1s;
           li{
-            @include size(480px, 480px);
+            @include size(30rem, 30rem);
             opacity: 0.5;
             img{
               @include size;
@@ -533,12 +539,12 @@ aside{
         }
       }
       .toggle_btn{
-        @include position(150px, 900px);
-        @include size(134px, 60px);
+        @include position(10.125rem, 56.25rem);
+        @include size(12.125rem, 3.75rem);
         @include flex($a:null);
         z-index: 2;
         span{
-          @include size(35px, 60px);
+          @include size(2.188rem, 3.75rem);
           &:first-child{
             @include arrow(left);
           }
@@ -566,81 +572,81 @@ aside{
       }
       .artist_img{
         @include position($l:0, $b:-100%);
-        @include size(829px, 1180px);
+        @include size(51.81rem, 73.75rem);
         img{
           @include size;
         }
       }
       .artist_text{
-        @include position($l:180px, $b:285px);
+        @include position($l:11.25rem, $b:17.81rem);
         z-index: 2;
         opacity: 0;
         h3{
-          @include font(30px, bold);
+          @include font($size30, bold);
         }
         h2{
-          @include font(100px, bold, #fff);
+          @include font(6.25rem, bold, #fff);
         }
       }
       .artist_list{
         @include position($r:0, $b:0);
-        @include size(741px, 840px);
+        @include size(46.31rem, 52.5rem);
         h4{
-          @include font(24px, bold, #fff);
+          @include font($size24, bold, #fff);
         }
         .popular_song{
           opacity: 0;
           @include position(0, 0);
-          @include size(520px, 450px);
+          @include size(32.5rem, 28.13rem);
           .popular_song_title{
             color: #fff;
             @include flex($a:null);
             ul{
-              @include size(110px, 40px);
+              @include size(10.625rem, 2.5rem);
               @include flex($a:null);
               img{
-                @include size(15px, 15px);
+                @include size(0.9375rem, 0.9375rem);
               }
               li{
-                @include size(40px, 40px);
-                @include font(12px);
+                @include size(2.5rem, 2.5rem);
+                @include font($size12);
                 @include flex(center,center,column);
                 span{
-                  width: 50px;
+                  width: 3.125rem;
                 }
               }
             }
           }
           .popular_song_list{
-            @include size(520px, 360px);
+            @include size(32.5rem, 22.5rem);
             overflow-y: scroll;
             li{
               @include flex;
-              padding: 20px 8px 14px;
+              padding: $size20 0.5rem $size14;
               border-bottom: 1px solid #ccc;
               .popular_song_songs{
                 @include flex($j:null);
                 div{
-                  @include size(60px, 60px);
+                  @include size(3.75rem, 3.75rem);
                   border-radius: 4px;
                   overflow: hidden;
-                  margin-right: 14px;
+                  margin-right: $size14;
                   img{
                     @include size;
                   }
                 }
                 p{
-                  @include font(18px, bold, #fff);
-                  line-height: 28px;
+                  @include font($size18, bold, #fff);
+                  line-height: 1.75rem;
                   span{
-                    @include font(14px, normal, #ccc);
+                    @include font($size14, normal, #ccc);
                   }
                 }
               }
               .popular_song_btn{
                 img{
                   vertical-align: middle;
-                  margin-right: 10px;
+                  margin-right: 0.625rem;
                 }
               }
             }
@@ -648,23 +654,23 @@ aside{
         }
         .popular_album{
           opacity: 0;
-          @include size(100%, 284px);
-          @include position($b:100px, $r:0);
+          @include size(100%, 17.75rem);
+          @include position($b:6.25rem, $r:0);
           ul{
-            margin-top: 30px;
+            margin-top: $size30;
             @include flex($a:null);
             li{
-              width: 180px;
-              margin-right: 40px;
+              width: 11.25rem;
+              margin-right: 2.5rem;
               @include flex($j:null, $d:column);
               .popular_album_art{
-                @include size(142px, 142px);
+                @include size(8.875rem, 8.875rem);
                 @include position($p:relative);
                 border-radius: 50%;
                 overflow: hidden;
-                margin-bottom: 20px;
+                margin-bottom: $size20;
                 div{
-                  @include size(40px, 40px);
+                  @include size(2.5rem, 2.5rem);
                   @include position(50%, 50%);
                   border-radius: 50%;
                   background: #ccc;
@@ -678,12 +684,12 @@ aside{
                 text-align: center;
                 color: #eee;
                 h6{
-                  @include font(20px, bold);
-                  height: 50px;
-                  line-height: 24px;
+                  @include font($size20, bold);
+                  height: 3.125rem;
+                  line-height: $size24;
                 }
                 p{
-                  @include font(18px);
+                  @include font($size18);
                 }
               }
             }
@@ -699,20 +705,20 @@ aside{
         @include size(50%, 100%);
         position: relative;
         .scroll_bar{
-          @include size(10px, 450px);
-          @include position(50%, 100px);
-            border-radius: 25px;
+          @include size(0.625rem, 28.13rem);
+          @include position(50%, 6.25rem);
+            border-radius: 1.563rem;
             transform: translateY(-50%);
             border: 1px solid #ccc;
             div{
               @include size(100%, 25%);
               background: $main_gradient;
-              border-radius: 25px;
+              border-radius: 1.563rem;
               transition: 2s;
             }
         }
         .magazine_index{
-          @include position(240px, 180px);
+          @include position($aside_width, 11.25rem);
           li{
             background: black;
             @include position(0, 0);
@@ -723,18 +729,18 @@ aside{
             }
             h3{
               @include font(null, bold);
-              margin-bottom: 40px;
+              margin-bottom: 2.5rem;
             }
             h6{
-              @include font(18px, bold, #398B5A);
+              @include font($size18, bold, #398B5A);
             }
             h2{
-              @include font(40px, bold, #fff);
-              margin-bottom: 60px;
+              @include font(2.5rem, bold, #fff);
+              margin-bottom: 3.75rem;
             }
             p{
               color: #ccc;
-              width: 550px;
+              width: 34.375rem;
             }
           }  
         }
@@ -762,23 +768,23 @@ aside{
 }  
 
 #wrap_chart{
-  width: 1680px;
-  padding: 100px 80px;
+  width: $sub_width;
+  padding: 6.25rem 5rem;
   .chart{
     .chart_text{
-      height: 105px;
+      height: 6.563rem;
       position: relative;
       p{
         color: #c7c7c7;
       }
       .chart_category{
-        @include position(48px, 455px);
+        @include position(3rem, 28.44rem);
         display: flex;
         li{
           color: #c7c7c7;
-          line-height: 14px;
-          margin-right: 15px;
-          padding-left: 15px;
+          line-height: $size14;
+          margin-right: 0.9375rem;
+          padding-left: 0.9375rem;
           border-left: 1px solid $gray_color;
           &:first-child{
             color: $main_color;
@@ -788,56 +794,56 @@ aside{
       }
     }
     .chart_main{
-      @include position(40px, $p:relative);
-      @include size(100%,600px);
+      @include position(2.5rem, $p:relative);
+      @include size(100%,37.5rem);
       img{
         @include size;
       }
       .no1{
-        @include size(300px);
+        @include size(18.75rem);
         .no1_art{
-          @include size(250px, 250px);
-          border-radius: 20px;
+          @include size(15.625rem, 15.625rem);
+          border-radius: $size20;
           overflow: hidden;
-          box-shadow: -20px 20px 20px rgba(0,0,0,0.4);
+          box-shadow: -$size20 $size20 $size20 rgba(0,0,0,0.4);
         }
         .no1_title{
-          @include font(40px, bold, $black_color_second);
-          @include size(100%, 150px);
+          @include font(2.5rem, bold, $black_color_second);
+          @include size(100%, 9.375rem);
           @include text;
-          padding-top: 30px;
-          line-height: 50px;
+          padding-top: $size30;
+          line-height: 3.125rem;
           .number{
             font-family: 'poppins';
           }
         }
         .no1_artist{
-          @include font(20px, bold);
+          @include font($size20, bold);
           @include text;
         }
         .no1_box{
-          margin-top: 36px;
+          margin-top: 2.25rem;
           @include flex($j:null, $a:null, $d: column);
           >div{
             @include flex;
-            height: 45px;
+            height: 2.813rem;
             &:first-child{
               border-bottom: 1px solid $gray_color;
               .date{
                 @include font($c:$black_color_second, $f:'poppins');
               }
               .long{
-                @include font(20px, bold, $main-color);
+                @include font($size20, bold, $main-color);
               }
             }
             &:last-child{
               div{
                 @include font($c:$main-color, $f:'poppins');
-                height: 40px;
+                height: 2.5rem;
                 display: flex;
                 span{
-                  @include size(25px, 25px);
-                  margin-right: 10px;
+                  @include size(1.563rem, 1.563rem);
+                  margin-right: 0.625rem;
                 }
               }
             }
@@ -845,21 +851,21 @@ aside{
         }
       }
       .chart_list{
-        @include position(0, 465px);
-        @include size(1070px);
+        @include position(0, 29.06rem);
+        @include size(66.88rem);
         .chart_list_title{
-          @include position(-42px, 60px);
+          @include position(-2.625rem, 3.75rem);
           display: flex;
           font-weight: bold;
           li{
             &:nth-child(1){
-              margin-right: 90px;
+              margin-right: 5.625rem;
             }
             &:nth-child(2){
-              margin-right: 284px;
+              margin-right: 17.75rem;
             }
             &:nth-child(3){
-              margin-right: 144px;
+              margin-right: 9rem;
             }
           }
         }
@@ -867,13 +873,13 @@ aside{
           @include size;
           overflow-y: scroll;
           .chart_lists{
-            @include size(100%, 50px);
+            @include size(100%, 3.125rem);
             @include flex($j:null);
             background: #f5f5f5;
             color: $black_color_second;
-            border-radius: 14px;
-            padding: 0 18px;
-            margin-bottom: 10px;
+            border-radius: $size14;
+            padding: 0 $size18;
+            margin-bottom: 0.625rem;
             cursor: pointer;
             &:hover{
               background-color: #4be274;
@@ -883,28 +889,28 @@ aside{
               @include flex;
               width: 100%;
               .updown{
-                @include font(12px, bold);
-                width: 20px;
-                margin-right: 18px;
+                @include font($size12, bold);
+                width: 1.5rem;
+                margin-right: $size18;
                 &.down{
                   color: red;
                   img{
-                    @include size(10px, 7px);
+                    @include size(0.625rem, 0.4375rem);
                     vertical-align: middle;
-                    margin-right: 1px;
+                    margin-right: 0.0625rem;
                   }
                 }
                 &.up{
                   color: blue;
                   img{
-                    @include size(10px, 7px);
+                    @include size(0.625rem, 0.4375rem);
                     vertical-align: middle;
-                    margin-right: 1px;
+                    margin-right: 0.0625rem;
                   }
                 }
                 &.normal{
                   img{
-                    @include size(18px, 2px);
+                    @include size($size18, 0.125rem);
                     vertical-align: middle;
                   }
                 }
@@ -914,25 +920,25 @@ aside{
                 margin-right: $m;
               }
               .rank{
-                @include font(18px, $f:'poppins');
-                @include chart_list(20px, 30px);
+                @include font($size18, $f:'poppins');
+                @include chart_list($size20, $size30);
               }
               .chart_art{
-                @include chart_list(null, 24px);
-                @include size(36px, 36px);
-                border-radius: 4px;
+                @include chart_list(null, $size24);
+                @include size(2.25rem, 2.25rem);
+                border-radius: 0.25rem;
               }
               .chart_songs{
-                @include font(16px, bold);
+                @include font(1rem, bold);
                 @include text;
-                @include chart_list(278px, 24px);
+                @include chart_list(17.38rem, $size24);
               }
               .chart_artist{
-                @include chart_list(120px, 70px);
+                @include chart_list(7.5rem, 4.375rem);
                 @include text;
               }
               .chart_album{
-                @include chart_list(260px, 24px);
+                @include chart_list(23.75rem, $size24);
                 @include text;
               }
             }
@@ -941,10 +947,10 @@ aside{
       }
     }
     .play_icon{
-      @include size(80px, 20px);
+      @include size(5rem, $size20);
       @include flex;
       li:last-child{
-        height: 5px;
+        height: 0.3125rem;
       }
     }
   }
@@ -953,31 +959,31 @@ aside{
   z-index: 2;
   .trend{
     .toggle_btn{
-      @include size(120px, 30px);
+      @include size(7.5rem, $size30);
       @include flex($a:null);     
       .left{
-        @include size(18px,30px);
+        @include size($size18,$size30);
         @include arrow(left);
       }
       .right{
-        @include size(18px, 30px);
+        @include size($size18, $size30);
         @include arrow(right);
       }
     }
     .trend_main{
       @include position(0, 10%, relative);
-      @include size(80%, 420px);
+      @include size(80%, 26.25rem);
       .toggle_btn{
         @include position(0, 50%);
         transform: translateX(-50%);
       }
       .trend_slide{
-        @include position(50px, 0);
-        @include size(100%, 300px);
+        @include position(3.125rem, 0);
+        @include size(100%, 18.75rem);
         .trend_imgs{
           li{
             @include position(50%, null);
-            @include size(600px, 100%);
+            @include size(37.5rem, 100%);
             transition: 1s;
             transform: translate(0,-50%) scale(0.8);
             &.trend_0{
@@ -985,8 +991,8 @@ aside{
               left: 50%;
               transform: translate(-50%,-50%) scale(1);
               .trend_img_texts{
-                width: 340px;
-                line-height: 60px;
+                width: 22.81rem;
+                line-height: 3.75rem;
               }
               .trend_play_btn{
                 display: block;
@@ -1001,36 +1007,36 @@ aside{
               }
               .trend_img_texts{
                 h2{
-                  font-size: 30px;
+                  @include font($size20);
                 }
               }
             }
             &.trend_2{
               filter: blur(4px);
               z-index: 0;
-              left: 630px;
+              left: 39.38rem;
               .trend_play_btn{
                 display: none;
               }
               .trend_img_texts{
-                left: 240px;
+                left: $aside_width;
                 h2{
-                  font-size: 30px;
+                  @include font($size20);
                 }
               }
             }
             .trend_img_texts{
-              @include position($l:30px, $b:30px);
+              @include position($l:$size30, $b:$size30);
               h2{
-                @include font(50px, bold, #fff);
+                @include font($size30, bold, #fff);
               }
               p{
-                @include font(18px, bold, $gray_color);
+                @include font($size18, bold, $gray_color);
               }
             }
             .trend_play_btn{
-              @include size(200px, 60px);
-              @include position($r:30px, $b:30px);
+              @include size(12.5rem, 3.75rem);
+              @include position($r:$size30, $b:$size30);
             }
           }
         }
@@ -1038,32 +1044,32 @@ aside{
     }
     .trend_songs{
       .trend_songs_title{
-        width: 1500px;
+        width: 93.75rem;
         @include flex;
         h3{
-          @include font(30px, bold, $black_color_second);
+          @include font($size30, bold, $black_color_second);
         }
         .toggle_btn{
-          width: 80px;
+          width: 5rem;
         }
       }
       .trend_list_slide{
-        @include size(100%, 250px);
-        margin-top: 20px;
+        @include size(100%, 23.125rem);
+        margin-top: $size20;
         overflow: hidden;
         .trend_songs_list{
           @include position(0, 0, relative);
           @include flex($a:null);
         }
         li{
-          @include size(150px, 220px);
+          @include size(9.375rem, 9.375rem);
           @include flex($j:null, $d:column);
           position: relative;
           text-align: center;
           .trend_songs_art{
-            @include size(150px, 150px);
+            @include size(9.375, 9.375);
             position: relative;
-            box-shadow: 0px 6px 10px rgba(0,0,0,0.2);
+            box-shadow: 0px 6px 0.625rem rgba(0,0,0,0.2);
             >img{
               @include size;
             }
@@ -1083,15 +1089,15 @@ aside{
             }
           }
           .trend_songs_text{
-            margin-top: 10px;
+            margin-top: 0.625rem;
             h6{
-              @include font(16px, bold, $black_color);
+              @include font(1rem, bold, $black_color);
               @include text;
-              @include size(150px, null);
+              @include size(13.125rem, null);
             }
             p{
               @include text;
-              @include size(150px,null);
+              @include size(13.125rem,null);
               color: $black_color;
             }
           }
@@ -1105,7 +1111,7 @@ aside{
   background-color: black;
   overflow: hidden;
   .page_toggle{
-    @include size(20px, 34px);
+    @include size($size20, 2.125rem);
     @include position(50%, null);
     transform: translateY(-50%);
     z-index: 3;
@@ -1114,7 +1120,7 @@ aside{
       display: none;
     }
     &.left{
-      left: 30px;
+      left: $size30;
       opacity: 0.8;
       animation: toggle_move_left 2s infinite;
       @include arrow(left);
@@ -1123,7 +1129,7 @@ aside{
       }
     }
     &.right{
-      right: 290px;
+      right: 18.13rem;
       opacity: 0.8;
       animation: toggle_move_right 2s infinite;
       @include arrow(right);
@@ -1133,13 +1139,13 @@ aside{
     }
   }
   .podcast{
-    @include size(1680*2px, 100vh);
+    @include size($sub_width*2, 100vh);
     @include position(null, 0, relative);
     display: flex;
     transition: 1s;
     >li{
       @include size(50%);
-      padding: 100px 80px;
+      padding: 6.25rem 5rem;
       position: relative;
       &.on{
         .article{
@@ -1148,9 +1154,9 @@ aside{
       }
       &:nth-child(2){
         .article{
-          left: 740px;
+          left: 46.25rem;
           img{
-            @include size(940px, auto);
+            @include size(58.75rem, auto);
           }
           .blur{
             background: radial-gradient(circle, rgba(255,221,0,1) 0%, rgba(255,255,0,1) 100%);
@@ -1158,38 +1164,38 @@ aside{
         }
       }
       .article{
-        @include position($l:800px, $b:-100%);
+        @include position($l:50rem, $b:-100%);
         .blur{
           @include position(65%, 55%);
-          @include size(700px, 700px);
+          @include size(43.75rem, 43.75rem);
           transform: translate(-50%, -50%);
           background: radial-gradient(circle, rgba(219,37,232,1) 0%, rgba(238,8,130,1) 100%);
           border-radius: 50%;
-          filter: blur(50px);
+          filter: blur(3.125rem);
         }
         img{
-          @include size(780px, auto);
+          @include size(48.75rem, auto);
           position: relative;
           z-index: 1;
         }
       }
       .podcast_main{
-        @include size(840px, null);
+        @include size(52.5rem, null);
         z-index: 3;
         .podcast_text{
           h2{
-            @include font(70px, bold, #fff);
-            line-height: 80px;
-            width: 600px;
+            @include font(4.375rem, bold, #fff);
+            line-height: 5rem;
+            width: 37.5rem;
           }
           p{
-            @include font(18px, normal, $gray_color);
-            margin-top: 20px;
+            @include font($size18, normal, $gray_color);
+            margin-top: $size20;
           }
           .play_btn{
-            margin-top: 50px;
+            margin-top: 3.125rem;
             img{
-              @include size(200px, 60px);
+              @include size(12.5rem, 3.75rem);
             }
           }
         }
@@ -1199,23 +1205,23 @@ aside{
           z-index: 3;
           .recently_title{  
             @include flex($a:null);
-            margin-top: 110px;
+            margin-top: 6.875rem;
             h4{
-              @include font(30px, bold, #fff, 'poppins');
+              @include font($size30, bold, #fff, 'poppins');
             }
           }
           .contents{
             @include flex($a:null);
-            margin-top: 20px;
+            margin-top: $size20;
             width: 100%;
             .recently_img{
-              @include size(260px, 140px);
-              border-radius: 12px;
+              @include size(16.25rem, 8.75rem);
+              border-radius: $size12;
               background: #ccc;
               box-shadow: 3px 3px 6px rgba(255,255,255,0.5);
             }
             p{
-              margin-top: 20px;
+              margin-top: $size20;
               color: #eee;
             }
           }
@@ -1232,11 +1238,11 @@ aside{
       z-index: 2;
     }
     .musicvideo_main{
-      @include size(100%, 400px);
+      @include size(100%, 25rem);
       background: #fff;
       z-index: 0;
       .video_play{
-        $video_size: 550px;
+        $video_size: 34.375rem;
         @include size(100%, $video_size);
         @include position(0, 0);
         &:hover {
@@ -1253,7 +1259,7 @@ aside{
         }
         .movie_controler{
           @include position($b:0, $l:0);
-          @include size(100%, 10px);
+          @include size(100%, 0.625rem);
           background: #eee;
           .movie_underbar{
             @include size(0);
@@ -1262,8 +1268,8 @@ aside{
           }
         }
         .mute_btn, .muteX_btn{
-          @include size(30px, 30px);
-          @include position($l:80px, $b:30px);
+          @include size($size30, $size30);
+          @include position($l:5rem, $b:$size30);
           cursor: pointer;
           opacity: 0;
           img{
@@ -1275,11 +1281,11 @@ aside{
         }
         .black_bg{
           opacity: 0;
-          height: $video_size - 10px;
+          height: $video_size - 0.625rem;
         }
         .musicvideo_albumart{
-          @include size(200px, 200px);
-          @include position(220px, 80px);
+          @include size(12.5rem, 12.5rem);
+          @include position(13.75rem, 5rem);
           opacity: 0;
           transition: 1s;
           img{
@@ -1287,14 +1293,14 @@ aside{
           }
         }
         .musicvideo_text{
-          @include position(220px, 340px);
+          @include position(13.75rem, 21.25rem);
           opacity: 0;
           transition: 1s;
           h2{
-            @include font(50px, bold, #fff, 'poppins');
+            @include font(3.125rem, bold, #fff, 'poppins');
           }
           p{
-            @include font(20px, bold, #eee);
+            @include font($size20, bold, #eee);
           }
         }
         .video_play_btn{
@@ -1307,28 +1313,28 @@ aside{
           transition: 1s;
           cursor: pointer;
           img{
-            @include size(40px, 40px);
+            @include size(2.5rem, 2.5rem);
           }
         }
       } 
     }
     .popular_video{
-      margin-top: 40px;
+      margin-top: 2.5rem;
       .popular_video_title{
         @include flex;
-        width: 320px;
+        width: 20rem;
         h5{
-          @include font(30px, bold, $black_color_second);
+          @include font($size30, bold, $black_color_second);
         }
         ul{
-          @include size(80px, 15px);
+          @include size(5rem, 0.9375rem);
           @include flex($a:null);
           color: #c7c7c7;
-          line-height: 15px;
+          line-height: 0.9375rem;
           li{
             cursor: pointer;
             &:first-child{
-              padding-right: 10px;
+              padding-right: 0.625rem;
               border-right: 1px solid #c7c7c7;
               color: $main_color;
             }
@@ -1337,15 +1343,15 @@ aside{
       }
       .popular_video_list{
         @include flex($a:null);
-        margin-top: 24px;
-        width: 1520px;
+        margin-top: $size24;
+        width: 95rem;
         .videos{
-          @include size(220px, 120px);
+          @include size(13.75rem, 7.5rem);
           .snapshot{
             cursor: pointer;
-            @include size(100%, 120px);
+            @include size(100%, 7.5rem);
             position: relative;
-            border-radius: 12px;
+            border-radius: $size12;
             background: #ccc;
             overflow: hidden;
             transition: 1s;
@@ -1358,20 +1364,20 @@ aside{
               object-fit: cover;
             }
             .black_bg{
-              border-radius: 12px;
+              border-radius: $size12;
             }
           }
           .text{
             position: relative;
-            margin-top: 10px;
+            margin-top: 0.625rem;
             h6{
-              @include font(18px, bold, $black_color_second);
+              @include font($size18, bold, $black_color_second);
             }
             p{
               color: $gray_color;
             }
             .more_btn{
-              @include position(50%, $r:10px);
+              @include position(50%, $r:0.625rem);
               transform: translateY(-50%);
             }
           }
@@ -1384,9 +1390,9 @@ aside{
   z-index: 2;
   .dj{
     .dj_main{
-      @include size(100%, 450px);
+      @include size(100%, 28.125rem);
       .dj_main_ul{
-        margin-top: 30px;
+        margin-top: $size30;
         display: flex;
         height: 100%;
         overflow: hidden;
@@ -1399,17 +1405,17 @@ aside{
             background: rgba(0,0,0,0.6);
           }
           .dj_main_text{
-            @include position($l:25px, $b:50px);
+            @include position($l:1.563rem, $b:3.125rem);
             .main_tags{
               span{
                 color: $main_color;
-                padding: 5px;
+                padding: 0.3125rem;
               }
             }
             h2{
-              @include font(20px, bold, #eee);
-              margin: 10px 0;
-              height: 70px;
+              @include font($size20, bold, #eee);
+              margin: 0.625rem 0;
+              height: 4.375rem;
             }
             .dj_play_btn{
               display: none;
@@ -1424,12 +1430,12 @@ aside{
                   color:$white_color_second;
                   &:first-child{
                     color: $main_color;
-                    padding-right: 10px;
-                    margin-right: 10px;
+                    padding-right: 0.625rem;
+                    margin-right: 0.625rem;
                     border-right: 1px solid #ccc;
                     img{
                       vertical-align: middle;
-                      height: 14px;
+                      height: $size14;
                     }
                   }
                 }
@@ -1442,31 +1448,31 @@ aside{
               background: rgba(0,0,0,0.4);
             }
             .dj_main_text{
-              width: 280px;
-              left: 50px;
+              width: 17.5rem;
+              left: 3.125rem;
               .main_tags{
                 span{
-                  padding: 0 10px;
+                  padding: 0 0.625rem;
                   border: 2px solid $main_color;
-                  border-radius: 50px;
+                  border-radius: 3.125rem;
                   color: #fff;
-                  margin-right: 10px;
+                  margin-right: 0.625rem;
                 }
               }
               h2{
-                font-size: 30px;
-                margin-bottom: 30px;
+                @include font($size30);
+                margin-bottom: $size30;
               }
               p{
-                @include font(16px, null, $gray_color);
+                @include font(1rem, null, $gray_color);
                 display: block;
               }
               .dj_play_btn{
-                @include position(50px, $r:-120px);
+                @include position(3.125rem, $r:-7.5rem);
                 display: block;
                 cursor: pointer;
                 img{
-                  @include size(50px, 50px);
+                  @include size(3.125rem, 3.125rem);
                 }
               }
               ul{
@@ -1478,19 +1484,19 @@ aside{
       }
     }
     .popular_dj{
-      margin-top: 50px;
+      margin-top: 3.125rem;
       .popular_dj_title{
         h5{
-          @include font(24px, bold, $black_color_second);
+          @include font($size24, bold, $black_color_second);
         }
       }
       .popular_dj_list{
-        @include position(20px, 0, relative);
+        @include position($size20, 0, relative);
         @include flex($a:null);
         >li{
           display: flex;
           .dj_art{
-            @include size(100px, 100px);
+            @include size(6.25rem, 6.25rem);
             position: relative;
             border-radius: 50%;
             box-shadow: 0px 6px 6px rgba(0,0,0,0.2);
@@ -1500,39 +1506,39 @@ aside{
             }
           }
           .dj_text{
-            width: 210px;
-            margin-left: 15px;
+            width: 13.125rem;
+            margin-left: 0.9375rem;
             position: relative;
             .tags{
               span{
+                @include font(0.625rem);
                 border: 1px solid $main_color;
-                font-size: 10px;
-                padding: 0 5px;
-                border-radius: 50px;
+                padding: 0 0.3125rem;
+                border-radius: 3.125rem;
               }
             }
             h2{
-              @include font(14px, bold);
-              margin: 10px 0;
-              height: 40px;
-              line-height: 20px;
+              @include font($size14, bold);
+              margin: 0.625rem 0;
+              height: 2.5rem;
+              line-height: $size20;
             }
             p{
-              @include font(10px, null, $gray_color);
+              @include font(0.625rem, null, $gray_color);
             }
             ul{
               @include position($r:0, $b:0);
+              @include font(0.625rem);
               display: flex;
-              font-size: 10px;
               li{
                 &:first-child{
                   color: $main_color;
-                  padding-right: 10px;
-                  margin-right: 10px;
+                  padding-right: 0.625rem;
+                  margin-right: 0.625rem;
                   border-right: 1px solid #ccc;
                   img{
                     vertical-align: middle;
-                    height: 10px;
+                    height: 0.625rem;
                   }
                 }
               }
