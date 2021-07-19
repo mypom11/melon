@@ -503,7 +503,7 @@ aside{
     .player_bg{
       @include size;
       @include position(0, 0);
-      @include background('album_art/iu.jpg');
+      @include background('album_art/iu.webp');
       display: block;
       content: "";
       filter: blur(1.25rem);

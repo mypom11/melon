@@ -890,7 +890,7 @@ aside .now_playing .player_bg {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("../img/album_art/iu.jpg");
+  background-image: url("../img/album_art/iu.webp");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1376,12 +1376,19 @@ aside .now_playing .player .status_bar div {
   width: 48.75rem;
   height: 30rem;
   position: absolute;
-  top: 45%;
+  top: 50%;
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   overflow: hidden;
   z-index: 2;
+}
+
+@media (min-width: 0) and (max-width: 1400px) {
+  #wrap_home section.new_album .album_slide {
+    position: absolute;
+    top: 45%;
+  }
 }
 
 #wrap_home section.new_album .album_slide ul {
