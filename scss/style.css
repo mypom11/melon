@@ -513,32 +513,32 @@ article {
     flex-direction: column;
     margin-right: 100px;
   }
-  article .player ul li:nth-child(2) .play_btn {
+  article .player ul li:nth-child(2) .small_play_btn {
     width: 106px;
     height: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  article .player ul li:nth-child(2) .play_btn .start_btn, article .player ul li:nth-child(2) .play_btn .stop_btn {
+  article .player ul li:nth-child(2) .small_play_btn .small_start_btn, article .player ul li:nth-child(2) .small_play_btn .small_stop_btn {
     width: 25px;
     height: 25px;
   }
-  article .player ul li:nth-child(2) .play_btn .stop_btn {
+  article .player ul li:nth-child(2) .small_play_btn .small_stop_btn {
     display: none;
   }
-  article .player ul li:nth-child(2) .play_btn .prev_btn, article .player ul li:nth-child(2) .play_btn .next_btn {
+  article .player ul li:nth-child(2) .small_play_btn .prev_btn, article .player ul li:nth-child(2) .small_play_btn .next_btn {
     width: 20px;
     height: 20px;
   }
-  article .player ul li:nth-child(2) .status_bar {
+  article .player ul li:nth-child(2) .small_status_bar {
     margin-top: 10px;
     width: 300px;
     height: 8px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 20px;
   }
-  article .player ul li:nth-child(2) .status_bar div {
+  article .player ul li:nth-child(2) .small_status_bar div {
     width: 0;
     height: 100%;
     background: linear-gradient(90deg, #00d63b 0%, #00eeff 100%);

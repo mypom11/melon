@@ -375,21 +375,21 @@ article{
             &:nth-child(2){
               @include flex(center, center, column);
               margin-right: 100px;
-              .play_btn{
+              .small_play_btn{
                 $btn_size: 25px;
                 @include size(106px, $btn_size);
                 @include flex;
-                .start_btn, .stop_btn{
+                .small_start_btn, .small_stop_btn{
                   @include size($btn_size, $btn_size);
                 }
-                .stop_btn{
+                .small_stop_btn{
                   display: none;
                 }
                 .prev_btn, .next_btn{
                   @include size(20px, 20px);
                 }
               }
-              .status_bar{
+              .small_status_bar{
                 margin-top: 10px;
                 @include size(300px, 8px);
                 border: 1px solid rgba(0,0,0,0.3);

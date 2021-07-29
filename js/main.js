@@ -134,8 +134,8 @@ function statusEvent(){
 }
 statusEvent()
 function player_clicker(){
-    play_btn = document.querySelector('.start_btn');
-    stop_btn = document.querySelector('.stop_btn');
+    play_btn = document.querySelector(`.start_btn`);
+    stop_btn = document.querySelector(`.stop_btn`);
     play_btn.addEventListener('click',function(){
         audioPlay()
     })
@@ -145,8 +145,8 @@ function player_clicker(){
 }
 player_clicker()
 function audioPlay(){
-    play_btn = document.querySelector('.start_btn');
-    stop_btn = document.querySelector('.stop_btn');
+    play_btn = document.querySelector(`.start_btn`);
+    stop_btn = document.querySelector(`.stop_btn`);
     audio.play()
     audio.volume = 0.6
     audio.loop = true
@@ -155,8 +155,8 @@ function audioPlay(){
     main_music = true;
 }
 function audiostop(){
-    play_btn = document.querySelector('.start_btn');
-    stop_btn = document.querySelector('.stop_btn');
+    play_btn = document.querySelector(`.start_btn`);
+    stop_btn = document.querySelector(`.stop_btn`);
     audio.pause()
     main_music = false;
     play_btn.style.display = 'block'
@@ -370,7 +370,7 @@ function ArtistDisplay(songs){
 function createArtistList(song){
     return`<li>
                 <div class="popular_song_songs">
-                    <div><img src="${song.albumart}" alt="${item.artist}-${item.album}"></div>
+                    <div><img src="${song.albumart}" alt="${song.artist}-${song.album}"></div>
                     <p>${song.title}<br><span>${song.artist}</span></p>
                 </div>
                 <div class="popular_song_btn">
@@ -420,7 +420,7 @@ function createList(song){
         <ul>
         ${updownD()}
         <li class="rank" data-rank="${song.rank}">${song.rank}</li>
-        <li class="chart_art" data-rank="${song.rank}"><img src="${song.albumart}" alt="${item.artist}-${item.album}"></li>
+        <li class="chart_art" data-rank="${song.rank}"><img src="${song.albumart}" alt="${song.artist}-${song.album}"></li>
         <li class="chart_songs" data-rank="${song.rank}">${song.title}</li>
         <li class="chart_artist" data-rank="${song.rank}">${song.artist}</li>
         <li class="chart_album" data-rank="${song.rank}">${song.album}</li>
@@ -463,7 +463,7 @@ function dateCreate(){
 dateCreate()
 function createNo1(song){
     return `<div class="no1">
-    <div class="no1_art"><img src="${song.albumart}" alt="${item.artist}-${item.album}"></div>
+    <div class="no1_art"><img src="${song.albumart}" alt="${song.artist}-${song.album}"></div>
     <div class="no1_title"><span class="number">${song.rank} -</span><br>
       <span class="no1_title_text">${song.title}</span>
     </div>
@@ -621,7 +621,7 @@ function dataDisplay(songs){
 function createTrendList(song){
     return`<li>
         <div class="trend_songs_art">
-        <img src="${song.albumart}" alt="${item.artist}-${item.album}">
+        <img src="${song.albumart}" alt="${song.artist}-${song.album}">
         <div class="black_bg">
             <div class="btn"><img src="img/icons/btn_play.png" alt="재생버튼"></div>
         </div>
