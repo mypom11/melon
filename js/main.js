@@ -314,15 +314,15 @@ function nowPlayingDisplay(item){
     return `<div class="player_bg"></div>
                 <div class="player">
                 <h5>Now Playing</h5>
-                <div class="album_art"><img src="${item.albumart}" alt=""></div>
+                <div class="album_art"><img src="${item.albumart}" alt="${item.artist}-${item.album}"></div>
                 <p class="song_title">${item.title}</p>
                 <p class="song_artist">${item.artist}</p>
                 <p class="song_album">${item.album}</p>
                 <div class="play_btn">
-                    <div class="prev_btn"><img src="img/icons/btn_prev.png"></div>
-                    <div class="start_btn"><img src="img/icons/btn_play.png"></div>
-                    <div class="stop_btn"><img src="img/icons/btn_stop.png"></div>
-                    <div class="next_btn"><img src="img/icons/btn_next.png"></div>
+                    <div class="prev_btn"><img src="img/icons/btn_prev.png" alt="이전버튼"></div>
+                    <div class="start_btn"><img src="img/icons/btn_play.png" alt="재생버튼"></div>
+                    <div class="stop_btn"><img src="img/icons/btn_stop.png" alt="정지버튼"></div>
+                    <div class="next_btn"><img src="img/icons/btn_next.png" alt="다음버튼"></div>
                 </div>
                 <div class="status_bar">
                     <div></div>
@@ -330,7 +330,7 @@ function nowPlayingDisplay(item){
             </div>`               
 }
 function smallPlayingDisplay(item){
-    return `<div class="album_art"><img src="${item.albumart}" alt=""></div>
+    return `<div class="album_art"><img src="${item.albumart}" alt="${item.artist}-${item.album}"></div>
     <div class="now_playing_text">
       <p class="song_title">${item.title}</p>
       <p class="song_artist">${item.artist}</p>
@@ -370,12 +370,12 @@ function ArtistDisplay(songs){
 function createArtistList(song){
     return`<li>
                 <div class="popular_song_songs">
-                    <div><img src="${song.albumart}"></div>
+                    <div><img src="${song.albumart}" alt="${item.artist}-${item.album}"></div>
                     <p>${song.title}<br><span>${song.artist}</span></p>
                 </div>
                 <div class="popular_song_btn">
-                    <img src="img/icons/play_artist.png">
-                    <img src="img/icons/more_artist.png">
+                    <img src="img/icons/play_artist.png" alt="재생">
+                    <img src="img/icons/more_artist.png" alt="더보기">
                 </div>
             </li>`
 }
@@ -420,14 +420,14 @@ function createList(song){
         <ul>
         ${updownD()}
         <li class="rank" data-rank="${song.rank}">${song.rank}</li>
-        <li class="chart_art" data-rank="${song.rank}"><img src="${song.albumart}" alt=""></li>
+        <li class="chart_art" data-rank="${song.rank}"><img src="${song.albumart}" alt="${item.artist}-${item.album}"></li>
         <li class="chart_songs" data-rank="${song.rank}">${song.title}</li>
         <li class="chart_artist" data-rank="${song.rank}">${song.artist}</li>
         <li class="chart_album" data-rank="${song.rank}">${song.album}</li>
             <ul class="play_icon">
-                <li><img src="img/icons/chart_play.png" alt=""></li>
-                <li><img src="img/icons/chart_plus.png" alt=""></li>
-                <li><img src="img/icons/chart_more.png" alt=""></li>
+                <li><img src="img/icons/chart_play.png" alt="재생"></li>
+                <li><img src="img/icons/chart_plus.png" alt="추가"></li>
+                <li><img src="img/icons/chart_more.png" alt="더보기"></li>
             </ul>
         </ul>
     </li>`
@@ -463,7 +463,7 @@ function dateCreate(){
 dateCreate()
 function createNo1(song){
     return `<div class="no1">
-    <div class="no1_art"><img src="${song.albumart}" alt=""></div>
+    <div class="no1_art"><img src="${song.albumart}" alt="${item.artist}-${item.album}"></div>
     <div class="no1_title"><span class="number">${song.rank} -</span><br>
       <span class="no1_title_text">${song.title}</span>
     </div>
@@ -477,11 +477,11 @@ function createNo1(song){
         <p class="long"></p>
       </div>
       <div>
-        <div><span><img src="img/icons/icon_7.png" alt=""></span>${Math.floor(Math.random()*10000)}</div>
+        <div><span><img src="img/icons/icon_7.png" alt="좋아요"></span>${Math.floor(Math.random()*10000)}</div>
         <ul class="play_icon">
-          <li><img src="img/icons/chart_play.png" alt=""></li>
-          <li><img src="img/icons/chart_plus.png" alt=""></li>
-          <li><img src="img/icons/chart_more.png" alt=""></li>
+          <li><img src="img/icons/chart_play.png" alt="재생"></li>
+          <li><img src="img/icons/chart_plus.png" alt="추가"></li>
+          <li><img src="img/icons/chart_more.png" alt="더보기"></li>
         </ul>
       </div>`
 }
@@ -491,13 +491,13 @@ function updownD(){
     let updown = Math.floor(Math.random()*3 +1);
     if(updown == 1){
         return `
-        <li class="updown up"><img src="img/icons/chart_up.png">${Math.floor(Math.random()*3 + 1)}</li>`
+        <li class="updown up"><img src="img/icons/chart_up.png" alt="상승">${Math.floor(Math.random()*3 + 1)}</li>`
     }else if(updown == 2){
         return `
-        <li class="updown down"><img src="img/icons/chart_down.png">${Math.floor(Math.random()*3 + 1)}</li>`
+        <li class="updown down"><img src="img/icons/chart_down.png" alt="하락">${Math.floor(Math.random()*3 + 1)}</li>`
     }else{
         return `
-        <li class="updown normal"><img src="img/icons/chart_normal.png"></li>`
+        <li class="updown normal"><img src="img/icons/chart_normal.png" alt="유지"></li>`
     }
 }
 
@@ -621,9 +621,9 @@ function dataDisplay(songs){
 function createTrendList(song){
     return`<li>
         <div class="trend_songs_art">
-        <img src="${song.albumart}" alt="">
+        <img src="${song.albumart}" alt="${item.artist}-${item.album}">
         <div class="black_bg">
-            <div class="btn"><img src="img/icons/btn_play.png" alt=""></div>
+            <div class="btn"><img src="img/icons/btn_play.png" alt="재생버튼"></div>
         </div>
         </div>
         <div class="trend_songs_text">

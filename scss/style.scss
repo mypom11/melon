@@ -1334,7 +1334,7 @@ aside{
           position: relative;
           text-align: center;
           .trend_songs_art{
-            @include size(9.375, 9.375);
+            @include size(9.375rem, 9.375rem);
             position: relative;
             box-shadow: 0px 6px 0.625rem rgba(0,0,0,0.2);
             >img{
